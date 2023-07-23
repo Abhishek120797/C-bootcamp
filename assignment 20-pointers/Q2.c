@@ -1,20 +1,17 @@
-#include<stdio.h>
-void swap(char**,char**);
-int main()
-{
-    char *a[50],*b[50];
-    printf("Enter string a : ");
-    gets(a);
-    printf("Enter string b :");
-    gets(b);
-    swap(&a,&b);
-    printf("a = %s\nb = %s",a,b);
-    return 0;
-}
-void swap(char **x,char **y)
+swap(char **x,char **y)
 {
     char *temp;
     temp=*x;
     *x=*y;
     *y=temp;
+}
+int main()
+{
+    char a[25],b[25];
+    printf("Enter two string : ");
+    gets(a);
+    gets(b);
+    swap(&a,&b);
+    printf("%s\n%s",a,b);
+    return ;
 }
