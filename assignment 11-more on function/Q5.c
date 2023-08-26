@@ -1,32 +1,31 @@
-#include<stdio.h>
-void printn(int);
+#include <stdio.h>
+void print_prime(int);
 int main()
 {
     int n;
-    printf("Enter a number : ");
-    scanf("%d",&n);
-    printn(n);
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    print_prime(n);
     return 0;
 }
-//function
-void printn(int x)
+
+void print_prime(int n)
 {
-    int j,count=1,i,flag;
-    for(j=2;count<=x;j++)
+    int count = 0;
+    for (int num = 0; count != n; num++)
     {
-        flag=0;
-        for(i=2;i<j;i++)
+        for (int i = num - 1; i > 0; i--)
         {
-            if(j%i==0)
+            if (num % i == 0)
             {
-                flag=1;
-                break;
+                if (i > 1)
+                    break;
+                else
+                {
+                    printf("%d ", num);
+                    count++;
+                }
             }
-        }
-        if(flag==0)
-        {
-            count++;
-            printf("%d ",j);
         }
     }
 }

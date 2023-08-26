@@ -1,30 +1,17 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    char x;
-    printf("Enter one charecter : ");
-    scanf("%c",&x);
-    if(x>=97 && x<=122)
-    {
-        printf("Entered charecter is lowercase alphabet");
-    }
+    char c;
+    printf("Enter a any charecter: ");
+    scanf("%c", &c);
+    if (c >= 48 && c <= 57)
+        printf("Digit");
+    else if (c >= 65 && c <= 90)
+        printf("uppercase alphabet");
+    else if (c >= 97 && c <= 122)
+        printf("lowercase alphabet");
     else
-    {
-        if(x>=65 && x<=90)
-        {
-            printf("Entered charecter is uppercase alphabet");
-        }
-        else
-        {
-            if(x>=48 && x<=57)
-            {
-                printf("Entered charecter is digit");
-            }
-            else
-            {
-                printf("Entered charecter is special charecter");
-            }
-        }
-    }
+        printf("special charecter");
+
     return 0;
 }

@@ -1,17 +1,16 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int n,a1=-1,a2=1,i,tn=0;
-printf("Enter a number");
-scanf("%d",&n);
-i=1;
-while(i<=n)
+    int n, t1 = -1, t2 = 1, tn;
+    printf("Enter a term number of febonacci series: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++)
     {
-tn=a1+a2;
-       a1=a2;
-       a2=tn;
-i++;
+        tn = t1 + t2;
+        t1 = t2;
+        t2 = tn;
     }
-printf("%dth term of febinanci series is %d",n,tn);
-return 0;
+    printf("%d\n", tn);
+
+    return 0;
 }

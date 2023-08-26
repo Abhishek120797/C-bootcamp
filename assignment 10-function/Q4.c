@@ -1,19 +1,16 @@
-#include<stdio.h>
-void naturalnum();
+#include <stdio.h>
+void display(int);
 int main()
 {
     int num;
-    printf("enter a number ");
-    scanf("%d",&num);
-    naturalnum(num);
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    display(num);
     return 0;
 }
-//function
-void naturalnum(int x)
+
+void display(int num)
 {
-    int i=1;
-    for(i;i<=x;i++)
-    {
-        printf("%d ",i);
-    }
+    for (int i = 1; i <= num; i++)
+        printf("%d ", i);
 }

@@ -1,21 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int i,j;
-    for(i=1;i<=4;i++)
+    int i, j;
+    for (i = 1; i <= 4; i++)
     {
-        for(j=1;j<=4;j++)
+        for (j = 1; j <= 4; j++)
         {
-            if(j==1||j==i)
-            {
+            if (j == i || j == 1)
                 printf("*");
-            }
             else
                 printf(" ");
-
         }
         printf("\n");
     }
     printf("*****");
-return 0;
+    return 0;
 }

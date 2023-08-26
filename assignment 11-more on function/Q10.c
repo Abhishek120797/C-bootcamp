@@ -1,22 +1,25 @@
-#include<stdio.h>
-int factorial(int);
+#include <stdio.h>
+int fact(int);
+
 int main()
 {
-    int sum=0,i;
-    for(i=1;i<=5;i++)
+    int n, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++)
     {
-    sum=sum+factorial(i)/i;
+        sum = sum + (fact(i) / i);
     }
-    printf("sum of series is %d",sum);
+    printf("%d", sum);
     return 0;
 }
-//function
-int factorial(int x)
+
+int fact(int num)
 {
-    int fact=1,i;
-    for(i=1;i<=x;i++)
+    int fact = 1;
+    for (int i = 1; i <= num; i++)
     {
-        fact=fact*i;
+        fact = fact * i;
     }
     return fact;
 }

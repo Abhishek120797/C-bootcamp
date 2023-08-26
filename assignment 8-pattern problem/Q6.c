@@ -1,19 +1,17 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int j,i;
-    for(i=1;i<=5;i++)
+    int i, j;
+    for (i = 1; i <= 5; i++)
     {
-        for(j=1;j<=9;j++)
+        for (j = 1; j <= 9; j++)
         {
-            if(j>=i&&j<=10-i)
-            {
+            if (j >= i && j <= 10 - i)
                 printf("*");
-            }
             else
                 printf(" ");
         }
         printf("\n");
     }
-return 0;
+    return 0;
 }

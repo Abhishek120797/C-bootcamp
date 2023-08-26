@@ -1,16 +1,15 @@
-#include<stdio.h>
-int square();
+#include <stdio.h>
+int square(int);
 int main()
 {
-    int n,sqr;
-    printf("Enter a number : ");
-    scanf("%d",&n);
-    sqr=square(n);
-    printf("Square of %d is %d",n,sqr);
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("square of %d is %d", num, square(num));
     return 0;
 }
-//function
-int square(int a)
+
+int square(int n)
 {
-    return (a*a);
+    return n * n;
 }

@@ -1,21 +1,20 @@
-#include<stdio.h>
-int factorial(int);
+#include <stdio.h>
+int fact(int);
 int main()
 {
-    int num,fact;
-    printf("enter a number ");
-    scanf("%d",&num);
-    fact=factorial(num);
-    printf("factorial of %d is %d",num,fact);
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("factorial of %d is %d", num, fact(num));
     return 0;
 }
-//function
-int factorial(int x)
+
+int fact(int num)
 {
-    int fac=1,i;
-    for(i=x;i>=1;i--)
+    int fact = 1;
+    for (int i = 1; i <= num; i++)
     {
-        fac=fac*i;
+        fact = fact * i;
     }
-    return fac;
+    return fact;
 }

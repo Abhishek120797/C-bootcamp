@@ -1,19 +1,20 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int num,i,sum=0,swap,c;
-    printf("Enter a number");
-    scanf("%d",&num);
-    swap=num;
-    for(i=1;swap!=0;i++)
+    int num, temp, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    temp = num;
+    while (temp != 0)
     {
-    c=swap%10;
-    swap=swap/10;
-    sum=sum+c*c*c;
+        int digit;
+        digit = temp % 10;
+        sum = sum + digit * digit * digit;
+        temp = temp / 10;
     }
-    if(num==sum)
-        printf("%d is armstrong number",num);
+    if (num == sum)
+        printf("armstrong number");
     else
-        printf("%d is not armstrong number",num);
+        printf("not a armstrong number");
     return 0;
 }

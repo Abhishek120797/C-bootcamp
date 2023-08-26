@@ -1,19 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int num,i,sum,swap,c;
-        for(num=1;num<=1000;num++)
+    int temp, sum;
+    for (int num = 0; num <= 1000; num++)
+    {
+        temp = num;
+        sum = 0;
+        while (temp != 0)
         {
-        sum=0;
-        swap=num;
-        while(swap!=0)
-        {
-            c=swap%10;
-            sum=sum+c*c*c;
-            swap=swap/10;
+            int digit;
+            digit = temp % 10;
+            sum = sum + digit * digit * digit;
+            temp = temp / 10;
         }
-        if(num==sum)
-            printf("%d\n",num);
-        }
+        if (num == sum)
+            printf("%d ", num);
+    }
+
     return 0;
 }

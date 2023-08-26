@@ -1,17 +1,17 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
- int num;
- printf("Enter a even number");
- scanf("%d",&num);
-
-switch(num%2)
-{
- case 1:
-     printf("number entered is an odd number");
-     break;
- case 0:
-     printf("upper nearest odd number is %d",num+1);
-}
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    switch (num % 2 == 0)
+    {
+    case 1:
+        printf("%d", num + 1);
+        break;
+    case 0:
+        printf("%d", num);
+        break;
+    }
     return 0;
 }

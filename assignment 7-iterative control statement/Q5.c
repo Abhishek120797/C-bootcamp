@@ -1,18 +1,19 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int num1,num2,i,count=0,c;
-    printf("enter two numbers");
-    scanf("%d %d",&num1,&num2);
-    c=num1<num2?num2:num1;
-    for(i=2;i<=c;i++)
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    for (int i = num1 < num2 ? num1 : num2; i > 0; i--)
     {
-        if(num1%i==0&&num2%i==0)
-        count++;
+        if (num1 % i == 0 && num2 % i == 0)
+        {
+            if (i == 1)
+                printf("co-prime number");
+            else
+                printf("not a co-prime number");
+            break;
+        }
     }
-    if(count==0)
-        printf("%d and %d is co prime number",num1,num2);
-    else
-        printf("%d and %d is not co prime number",num1,num2);
     return 0;
 }

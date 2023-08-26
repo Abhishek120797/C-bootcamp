@@ -1,19 +1,16 @@
-#include<stdio.h>
-void naturaloddnum();
+#include <stdio.h>
+void display(int);
 int main()
 {
     int num;
-    printf("enter a number ");
-    scanf("%d",&num);
-    naturaloddnum(num);
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    display(num);
     return 0;
 }
-//function
-void naturaloddnum(int x)
+
+void display(int num)
 {
-    int i=1;
-    for(i;i<=x;i++)
-    {
-        printf("%d ",i*2-1);
-    }
+    for (int i = 0; i < num; i++)
+        printf("%d ", i * 2 + 1);
 }

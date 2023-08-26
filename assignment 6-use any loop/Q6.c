@@ -1,13 +1,13 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int i,n,fact=1;
-    printf("Enter a number  ");
-    scanf("%d",&n);
-for(i=n;i>=1;i--)
-{
-    fact=fact*i;
-}
-    printf("factorial of %d is %d",n,fact);
+    int num, sum = 1;
+    printf("Enter a nunmber:");
+    scanf("%d", &num);
+    for (int i = 1; i <= num; i++)
+    {
+        sum = sum * i;
+    }
+    printf("%d", sum);
     return 0;
 }

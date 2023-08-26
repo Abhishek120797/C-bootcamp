@@ -1,29 +1,30 @@
-#include<stdio.h>
-int PRIME();
+#include <stdio.h>
+int next_prime(int);
+
 int main()
 {
-    int num,prime;
-    printf("Enter a number ");
-    scanf("%d",&num);
-    prime=PRIME(num);
-    printf("next prime number is %d",prime);
-return 0;
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("%d is next prime number", next_prime(num));
+    return 0;
 }
-//function
-int PRIME(int x)
+int next_prime(int num)
 {
-    int i,flag=0;
-    for(x=x+1;flag==0;x++)
+    int flag = 0;
+    for (num = num + 1; 1; num++)
     {
-        i=2;
-       while(i<x)
-       {
-           if(x%i==0)
-            break;
-           i++;
-       }
-       if(x==i)
-       break;
+        for (int i = num / 2; i > 0; i--)
+        {
+            if (num % i == 0)
+            {
+                if (i > 1)
+                    break;
+                else
+                    flag = 1;
+            }
+        }
+        if (flag == 1)
+            return num;
     }
-    return x;
 }

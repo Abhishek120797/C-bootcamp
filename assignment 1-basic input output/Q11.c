@@ -1,8 +1,9 @@
 #include <stdio.h>
 int main()
 {
-    int h,m;
-    scanf("%d:%d",&h,&m);
-    printf("%d hour,%d minute",h,m);
+    int h, m;
+    printf("Enter time in HH:MM format: ");
+    scanf("%d:%d", &h, &m);
+    printf("%d Hours and %d Minutes", h, m);
     return 0;
 }

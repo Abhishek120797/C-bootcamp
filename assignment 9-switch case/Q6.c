@@ -1,16 +1,33 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int x;
-    printf("Enter a year in yyyy format ");
-    scanf("%d",&x);
-    switch(x%4)
+    int year;
+    printf("Enter a year: ");
+    scanf("%d", &year);
+    switch (year % 100 == 0)
     {
-    case 0:
-        printf("%d is leap year",x);
-        break;
     case 1:
-        printf("%d is not leap year",x);
+        switch (year % 400 == 0)
+        {
+        case 1:
+            printf("Leap year");
+            break;
+        case 0:
+            printf("Not a Leap Year");
+            break;
+        }
+        break;
+    case 0:
+        switch (year % 4 == 0)
+        {
+        case 1:
+            printf("Leap Year");
+            break;
+        case 0:
+            printf("Not a Leap Year");
+            break;
+        }
+        break;
     }
     return 0;
 }

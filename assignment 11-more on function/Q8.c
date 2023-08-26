@@ -1,52 +1,60 @@
-#include<stdio.h>
-//function decleration
-int combinaton(int,int);
-int factorial(int);
-void pascal(int);
-//main function
+#include <stdio.h>
+
+int fact(int);
+int permutation(int, int);
+int combination(int, int);
+void print_pascal(int);
+
 int main()
 {
-    int length;
-    printf("Enter length of pascal trangle : ");
-    scanf("%d",&length);
-    pascal(length);  //pascal function call
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+    print_pascal(num);
     return 0;
 }
-//pascal function (TSRN)
-void pascal(int lin)
+
+void print_pascal(int line)
 {
-int i,j,k,r;
-for(i=1;i<=lin;i++)
+    int i, j, k, r;
+    for (i = 0; i < line; i++)
     {
-        k=1;
-        r=0;
-        for(j=1;j<=2*lin-1;j++)
-            if(j>=lin+1-i && j<=lin-1+i &&k)
+        k = 1;
+        r = 0;
+        for (j = 0; j <= (line * 2 - 1); j++)
+        {
+            if (j >= line - i && j <= line + i && k)
             {
-                printf("%d",combinaton(i-1,r));   //combination fuction call
-                k=0;
+                printf("%2d", combination(i, r));
+                k = 0;
                 r++;
             }
             else
             {
                 printf(" ");
-                k=1;
+                k = 1;
             }
+        }
         printf("\n");
     }
-    return 0;
 }
 
-//combination function
-int combinaton(int n,int r)
+int fact(int num)
 {
- return  factorial(n)/(factorial(r)*factorial(n-r));   //factorial function call
-}
-//factorial function
-int factorial(int x)
-{
-    int fact=1,i;
-    for(i=1;i<=x;i++)
-        fact=fact*i;
+    int fact = 1;
+    for (int i = 1; i <= num; i++)
+    {
+        fact = fact * i;
+    }
     return fact;
+}
+
+int permutation(int n, int r)
+{
+    return fact(n) / fact(n - r);
+}
+
+int combination(int n, int r)
+{
+    return permutation(n, r) / fact(r);
 }

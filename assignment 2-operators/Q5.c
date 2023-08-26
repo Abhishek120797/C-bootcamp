@@ -1,12 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int x,a1,a2,a3;
-printf("Enter three digit number");
-scanf("%d",&x);
-a1=x%10;
-a2=x/10%10;
-a3=x/100;
-printf("sum of three digit is %d",a1+a2+a3);
-return 0;
+    int num, sum = 0, temp;
+    printf("Enter three digit number: ");
+    scanf("%d", &num);
+    temp = num;
+    for (int i = 0; i < 3; i++)
+    {
+        sum = sum + temp % 10;
+        temp = temp / 10;
+    }
+    printf("Sum of digit of %d is %d", num, sum);
+    return 0;
 }

@@ -1,29 +1,37 @@
-#include<stdio.h>
-int combinaton(int,int);
-int factorial(int);
+#include <stdio.h>
+
+int fact(int);
+int permutation(int, int);
+int combination(int, int);
+
 int main()
 {
-int a,b,c;
-printf("Enter value of n : ");
-scanf("%d",&a);
-printf("Enter value of n : ");
-scanf("%d",&b);
-c=combinaton(a,b);
-printf("number of combinations are %d",c);
+    int result, n, r;
+    printf("Enter value of n:");
+    scanf("%d", &n);
+    printf("Enter value of r: ");
+    scanf("%d", &r);
+    result = combination(n, r);
+    printf("%d", result);
+    return 0;
 }
 
-//function
-int combinaton(int n,int r)
+int fact(int num)
 {
- return  factorial(n)/(factorial(r)*factorial(n-r));
-}
-//function
-int factorial(int x)
-{
-    int fact=1,i;
-    for(i=1;i<=x;i++)
+    int fact = 1;
+    for (int i = 1; i <= num; i++)
     {
-        fact=fact*i;
+        fact = fact * i;
     }
     return fact;
+}
+
+int permutation(int n, int r)
+{
+    return fact(n) / fact(n - r);
+}
+
+int combination(int n, int r)
+{
+    return permutation(n, r) / fact(r);
 }

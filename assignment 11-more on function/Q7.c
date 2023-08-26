@@ -1,23 +1,23 @@
-#include<stdio.h>
-void fibonacci();
+#include <stdio.h>
+void print_fib(int);
+
 int main()
 {
     int n;
-    printf("Enter anumber : ");
-    scanf("%d",&n);
-    fibonacci(n);
+    printf("Enter a term number of febonacci series: ");
+    scanf("%d", &n);
+    print_fib(n);
     return 0;
 }
-//function
-void fibonacci(int x)
+
+void print_fib(int n)
 {
-    int term=0,a=-1,b=1,sum;
-    while(term<=x)
+    int t1 = -1, t2 = 1, tn;
+    for (int i = 1; i <= n; i++)
     {
-        sum=a+b;
-        printf("%d ",sum);
-        a=b;
-        b=sum;
-        term++;
+        tn = t1 + t2;
+        t1 = t2;
+        t2 = tn;
+        printf("%d ", tn);
     }
 }

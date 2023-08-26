@@ -1,29 +1,29 @@
-#include<stdio.h>
-int contain();
+#include <stdio.h>
+int check(int, int);
 int main()
 {
-    int digit,num;
-    printf("Enter a number : ");
-    scanf("%d",&num);
-    printf("Enter a digit : ");
-    scanf("%d",&digit);
-    if(contain(num,digit))
-        printf("number contain digit");
+    int num, digit;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter a digit: ");
+    scanf("%d", &digit);
+    if (check(num, digit))
+        printf("%d is present in %d", digit, num);
     else
-        printf("number did not contain digit");
+        printf("%d is not present in %d", digit, num);
     return 0;
 }
-//function
-int contain(int x,int y)
+
+int check(int n, int d)
 {
-    int check=0;
-    while(x!=0)
+    if (n == 0 && d == 0)
+        return 1;
+    while (n != 0)
     {
-        check=x%10;
-        if(check==y)
+        if (n % 10 == d)
             return 1;
         else
-            x=x/10;
+            n = n / 10;
     }
     return 0;
 }

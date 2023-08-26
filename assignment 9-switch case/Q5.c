@@ -1,21 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int var;
-    printf("Enter a number : ");
-    scanf("%d",&var);
-switch (var)
-{
-case 1:
-    System.out.println("good");
-    break;
-case 2:
-    System.out.println("better");
-    break;
-case 3:
-    System.out.println("best");
-break;
-default :
-    System.out.println("invalid");
-}
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
+    switch (x)
+    {
+    case 1:
+        printf("good");
+        break;
+    case 2:
+        printf("good");
+        break;
+    case 3:
+        printf("good");
+        break;
+    default:
+        printf("Invalid");
+        break;
+    }
+    return 0;
 }

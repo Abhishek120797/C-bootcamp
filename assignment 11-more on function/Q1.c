@@ -1,24 +1,21 @@
-#include<stdio.h>
-int LCM();
+#include <stdio.h>
+int lcm(int, int);
 int main()
 {
-    int num1,num2,lcm;
-    printf("Enter a number\nfirst number=");
-    scanf("%d",&num1);
-    printf("second number=");
-    scanf("%d",&num2);
-   lcm=LCM(num1,num2);
-    printf("LCM of %d and %d is %d",num1,num2,lcm);
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    printf("LCM of %d and %d is %d", num1, num2, lcm(num1, num2));
     return 0;
 }
-//function
-int LCM(int x,int y)
+
+int lcm(int num1, int num2)
 {
- int i;
- for(i=1;i<=x>y?x:y;i++)
- {
-     if(i%x==0 && i%y==0)
-        break;
- }
- return i;
+    for (int i = num1 < num2 ? num1 : num2; 1; i++)
+    {
+        if (i % num1 == 0 && i % num2 == 0)
+        {
+            return i;
+        }
+    }
 }

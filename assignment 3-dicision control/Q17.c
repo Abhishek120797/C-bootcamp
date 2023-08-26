@@ -1,14 +1,13 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    float l1,l2,l3;
-    printf("Enter length sides of trangle");
-    scanf("%f",&l1);
-    scanf("%f",&l2);
-    scanf("%f",&l3);
-    if(l1+l2>l3 && l2+l3>l1 && l1+l3>l2)
-        printf("trangle is valid");
+    float s1, s2, s3;
+    printf("Enter sides of trangle: ");
+    scanf("%f %f %f", &s1, &s2, &s3);
+    if (s1 + s2 > s3 && s2 + s3 > s1 && s1 + s3 > s2)
+        printf("valid trangle");
     else
-        printf("trangle is not valid");
+        printf("Invalid trangle");
+
     return 0;
 }

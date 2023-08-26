@@ -1,24 +1,19 @@
-#include<stdio.h>
-int HCF();
+#include <stdio.h>
+int hcf(int, int);
 int main()
 {
-    int num1,num2,hcf;
-    printf("Enter a number\nfirst number=");
-    scanf("%d",&num1);
-    printf("second number=");
-    scanf("%d",&num2);
-    hcf=HCF(num1,num2);
-    printf("HCF of %d and %d is %d",num1,num2,hcf);
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    printf("HCF of %d and %d is %d", num1, num2, hcf(num1, num2));
     return 0;
 }
-//function
-int HCF(int x,int y)
+
+int hcf(int num1, int num2)
 {
- int i=x<y?x:y;
- for(i; i>1; i--)
- {
-     if(x%i==0 && y%i==0)
-        break;
- }
- return i;
+    for (int i = num1 < num2 ? num1 : num2; i > 0; i--)
+    {
+        if (num1 % i == 0 && num2 % i == 0)
+            return i;
+    }
 }

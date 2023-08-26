@@ -1,49 +1,32 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int x;
-    printf("Enter a month number ");
-    scanf("%d",&x);
-    switch(x)
+    int num;
+    printf("Enter month number : ");
+    scanf("%d", &num);
+    switch (num)
     {
-        case 1:
-        printf("number of days in %d is 31",x);
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        printf("31 days in %dth month", num);
         break;
-         case 2:
-        printf("number of days in %d is 28");
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        printf("30 days in %dth month", num);
         break;
-         case 3:
-        printf("number of days in %d is 31",x);
+    case 2:
+        printf("28 or 29 days in %dth month", num);
         break;
-         case 4:
-        printf("number of days in %d is 30",x);
+    default:
+        printf("You entered wrong month number please Enter number between '1' to '12'");
         break;
-         case 5:
-        printf("number of days in %d is 31",x);
-        break;
-         case 6:
-        printf("number of days in %d is 30",x);
-        break;
-         case 7:
-        printf("number of days in %d is 31",x);
-         case 8:
-        printf("number of days in %d is 31",x);
-        break;
-         case 9:
-        printf("number of days in %d is 30",x);
-        break;
-         case 10:
-        printf("number of days in %d is 31",x);
-        break;
-         case 11:
-        printf("number of days in %d is 30",x);
-        break;
-         case 12:
-        printf("number of days in %d is 31",x);
-        break;
-        default:
-        printf("Entered number is invalid");
-
     }
-return 0;
+    return 0;
 }

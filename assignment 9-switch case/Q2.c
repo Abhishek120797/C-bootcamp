@@ -1,51 +1,77 @@
-#include<stdio.h>
+#include <stdio.h>
+void add();
+void sub();
+void multi();
+void division();
+
 int main()
 {
-    int x,i;
-    float a,b,c;
-    for(i=1;1;i++)
+    int option;
+    while (1)
     {
-    printf("1.Addition\n");
-    printf("2.Subtraction\n");
-    printf("3.Multiplication\n");
-    printf("4.Division\n");
-    printf("5.Exit\n");
-    printf("Enter your choice : ");
-    scanf("%d",&x);
-        switch(x)
+        printf("1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit\n");
+        printf("select operetion by entering their serial number: ");
+        scanf("%d", &option);
+        switch (option)
         {
         case 1:
-        printf("Enter two numbers");
-        scanf("%f+%f",&a,&b);
-        c=a+b;
-        printf("addition of .2%f and .2%f is %.2f\n",a,b,c);
-        break;
-         case 2:
-       printf("Enter two numbers");
-        scanf("%f-%f",&a,&b);
-        c=a-b;
-        printf("Subtraction of .2%f and .2%f is %.2f\n",a,b,c);
-        break;
-         case 3:
-        printf("Enter two numbers");
-        scanf("%f*%f",&a,&b);
-        c=a*b;
-        printf("Multiplication of .2%f and .2%f is %.2f\n",a,b,c);
-        break;
-         case 4:
-        printf("Enter two numbers");
-        scanf("%f/%f",&a,&b);
-        c=a/b;
-        printf(".2%f divide by .2%f is %.2f\n",a,b,c);
-        break;
-         case 5:
-        break;
+            add();
+            break;
+        case 2:
+            sub();
+            break;
+        case 3:
+            multi();
+            break;
+        case 4:
+            division();
+            break;
+        case 5:
+            break;
         default:
-        printf("invalid choice\n");
+            option = 0;
+            break;
         }
-        printf("\n");
-        if(x==5)
+        if (option == 0 || option == 5)
             break;
     }
-return 0;
+    return 0;
+}
+
+void add()
+{
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    printf("%.2f + %.2f = %.2f", num1, num2, num1 + num2);
+    printf("\n");
+}
+
+void sub()
+{
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    printf("%.2f - %.2f = %.2f", num1, num2, num1 - num2);
+    printf("\n");
+}
+
+void multi()
+{
+    float num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%f %f", &num1, &num2);
+    printf("%.2f * %.2f = %.2f", num1, num2, num1 * num2);
+    printf("\n");
+}
+
+void division()
+{
+    float dividend, divisor;
+    printf("Enter dividend: ");
+    scanf("%f", &dividend);
+    printf("Enetr divisor: ");
+    scanf("%f", &divisor);
+    printf("%.2f / %.2f = %.2f", dividend, divisor, dividend / divisor);
+    printf("\n");
 }

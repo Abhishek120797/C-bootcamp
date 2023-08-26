@@ -1,10 +1,10 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int n,i;
-    printf("Enter a number ");
-    scanf("%d",&n);
-    for(i=1;i<=n;i++)
+    int times;
+    printf("Enter a nunmber:");
+    scanf("%d", &times);
+    for (int i = 0; i < times; i++)
         printf("MySirG\n");
     return 0;
 }

@@ -1,9 +1,9 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-char x;
-printf("Enter one charecter ");
-scanf("%c",&x);
-printf("ASCII code of %c is %d",x,x);
-return 0;
+    char a;
+    printf("Enter one charecter : ");
+    scanf("%c", &a);
+    printf("ASCII code of %c is %d", a, a);
+    return 0;
 }

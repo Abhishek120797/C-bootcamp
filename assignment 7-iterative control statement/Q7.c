@@ -1,23 +1,21 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-intnum,i,count,Fnum,Lnum;
-printf("enter two numbers");
-scanf("%d %d",&Fnum,&Lnum);
-for(num=Fnum;num<=Lnum;num++)
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    for (int num = (num1 < num2 ? num1 : num2); num <= (num1 > num2 ? num1 : num2); num++)
     {
-count=0;
-for(i=1;i<=num;i++)
-    {
-If(num%i==0)
+        for (int i = num / 2; i > 0; i--)
         {
-count++;
+            if (num % i == 0)
+            {
+                if (i > 1)
+                    break;
+                else
+                    printf("%d ", num);
+            }
         }
     }
-If(count==2)
-    {
-printf("%d ",num);
-    }
-    }
-return 0;
+    return 0;
 }

@@ -1,22 +1,15 @@
 #include <stdio.h>
 int main()
 {
-    float cost,sell,percent,result;
-    printf("Enter cost price=");
-    scanf("%f",&cost);
-    printf("Enter sell price=");
-    scanf("%f",&sell);
-    if(cost<=sell)
-    {
-        result=sell-cost;
-        percent=result/cost*100;
-        printf("profit percentage is %.2f",percent);
-    }
+    float cprice, sprice, profit;
+    printf("Enter cost price: ");
+    scanf("%f", &cprice);
+    printf("Enter sell price: ");
+    scanf("%f", &sprice);
+    profit = sprice - cprice;
+    if (profit > 0)
+        printf("profit percentage is %.f%%", profit * 100 / cprice);
     else
-    {
-        result=cost-sell;
-        percent=result/cost*100;
-        printf("loss percentage is %.2f",percent);
-    }
+        printf("loss percentage is %.f%%", -(profit) / 100 * cprice);
     return 0;
 }

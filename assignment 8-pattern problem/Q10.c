@@ -1,27 +1,30 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int j,i,x;
-    for(i=1;i<=4;i++)
+    int i, j, x;
+    for (i = 1; i <= 4; i++)
     {
-        x=1;
-        for(j=1;j<=7;j++)
+        x = 1;
+        for (j = 1; j <= 7; j++)
         {
-            if(j<=5-i||j>=3+i)
+            if (j <= 5 - i || j >= 3 + i)
             {
-                printf("%d",x);
-                if(j<5-i)
+                printf("%d", x);
+                if (j < 4)
                     x++;
                 else
                     x--;
-
             }
             else
+            {
                 printf(" ");
-                if(j==i+2)
+                if (j < 4)
                     x++;
+                else
+                    x--;
+            }
         }
         printf("\n");
     }
-return 0;
+    return 0;
 }

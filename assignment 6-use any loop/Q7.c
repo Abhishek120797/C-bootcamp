@@ -1,14 +1,15 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int i,num,count=0;
-    printf("Enter a number  ");
-    scanf("%d",&num);
-for(i=num;i!=0;i )
-{
-    i=i/10;
-    count++;
-}
-    printf("number of digit in %d is %d",num,count);
+    int num, count = 0, temp;
+    printf("Enter a number");
+    scanf("%d", &num);
+    temp = num;
+    while (temp != 0)
+    {
+        temp = temp / 10;
+        count++;
+    }
+    printf("%d", count);
     return 0;
 }

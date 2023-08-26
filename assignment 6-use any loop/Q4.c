@@ -1,13 +1,13 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int i,n,sum=0;
-    printf("Enter a number  ");
-    scanf("%d",&n);
-    for(i=1;i<=n;i++)
+    int num, sum = 0;
+    printf("Enter a nunmber:");
+    scanf("%d", &num);
+    for (int i = 1; i <= num; i++)
     {
-        sum=sum+i*i;
+        sum = sum + i * i;
     }
-    printf("The sum of square of first %d natural number is %d",n,sum);
+    printf("%d", sum);
     return 0;
 }

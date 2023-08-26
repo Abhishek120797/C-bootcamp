@@ -1,15 +1,16 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int num1,num2,hcf;
-printf("Enter two number");
-scanf("%d %d",&num1,&num2);
-hcf=num1<num2?num1:num2;
-for(hcf;hcf>1;hcf--)
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+    for (int i = num1 < num2 ? num1 : num2; i > 0; i--)
     {
-if(num1%hcf==0&&num2%hcf==0)
-break;
+        if (num1 % i == 0 && num2 % i == 0)
+        {
+            printf("hcf is %d", i);
+            break;
+        }
     }
-printf("HCF of %d and %d is %d",num1,num2,hcf);
-return 0;
+    return 0;
 }

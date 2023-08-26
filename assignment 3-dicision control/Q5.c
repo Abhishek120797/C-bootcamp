@@ -1,12 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int x;
-printf("Enter a number");
-scanf("%d",&x);
-if(x<=999 && x>=100)
-printf("%d is three digit number",x);
-else
-printf("%d is not a three digit number",x);
-return 0;
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num < 1000 && num > 99)
+        printf(" three digit number");
+    else
+        printf("not three digit number");
+    return 0;
 }

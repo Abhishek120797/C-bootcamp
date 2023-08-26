@@ -1,11 +1,12 @@
+#include <stdio.h>
 int main()
 {
-int x;
-    printf("Enter a number");
-    scanf("%d",&x);
-    if(x%3||x%2)
-        printf("%d is not divisibal by 3 and 2",x);
-        else
-        printf("%d is divisibal by 3 and 2",x);
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (num % 2 == 0 && num % 2 == 0)
+        printf("divisibal by 3 and 2");
+    else
+        printf("not divisibal by 3 and 2");
     return 0;
 }

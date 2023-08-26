@@ -1,9 +1,9 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-int x;
-printf("Enter a number ");
-scanf("%d",&x);
-printf("number printed without it's last digit is %d",x/10);
-return 0;
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("number withoout Unit digit is %d", num / 10);
+    return 0;
 }

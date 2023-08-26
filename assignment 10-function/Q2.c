@@ -1,22 +1,20 @@
-#include<stdio.h>
-float simpleI(float,float,float);
+#include <stdio.h>
+float simpleInterest(int, float, int);
 int main()
 {
-    float p,t,r,SI;
-    printf("Enter principal amount= ");
-    scanf("%f",&p);
-    printf("Enter time duration in years= ");
-    scanf("%f",&t);
-    printf("Enter rate of interest= ");
-    scanf("%f",&r);
-    SI=simpleI(p,t,r);
-    printf("simple interest= %.2f",SI);
+    int p, t;
+    float i;
+    printf("Enter principal amount: ");
+    scanf("%d", &p);
+    printf("Enter Rate of interest: ");
+    scanf("%f", &i);
+    printf("Enter time period in year: ");
+    scanf("%d", &t);
+    printf("Simple interest is %.2f", simpleInterest(p, i, t));
     return 0;
 }
-//function
-float simpleI(float p,float t,float r)
+
+float simpleInterest(int p, float i, int t)
 {
-    float si;
-    si=(p*t*r)/100.0;
-    return si;
+    return (p * i * t) / 100.0;
 }

@@ -1,10 +1,9 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-intx,y;
-printf("Enter a number");
-scanf("%d",&x);
-y=x%10;
-printf("unit digit of %d is %d",x,y);
-return 0;
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Unit digit is %d", num % 10);
+    return 0;
 }

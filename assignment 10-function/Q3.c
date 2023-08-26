@@ -1,21 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 int check(int);
 int main()
 {
     int num;
-    printf("Enter a number = ");
-    scanf("%d",&num);
-    if(check(num))
-        printf("%d is even number",num);
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    if (check(num))
+        printf("Even number");
     else
-        printf("%d is odd number",num);
+        printf("odd number");
     return 0;
 }
-//function
-int check(int x)
+
+int check(int num)
 {
-    if(x%2==0)
-        return 1;
-    else
-        return 0;
+    return num % 2 == 0 ? 1 : 0;
 }

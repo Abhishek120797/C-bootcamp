@@ -1,20 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-intx,count=0,result=0;
-printf("Enter a number");
-scanf("%d",&x);
-while(x!=0)
+    int num, result, count = 0;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    while (num != 0)
     {
-result=x&1;
-count++;
-if(result==1)
-    {
-printf("%d",count);
-break;
+        result = num & 1;
+        count++;
+        if (result == 1)
+        {
+            printf("%d", count);
+            break;
+        }
+        else
+        {
+            num = num >> 1;
+        }
     }
-else
-        x=x>>1;
-    }
-return 0;
+    return 0;
 }

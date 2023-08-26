@@ -1,11 +1,10 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-inti;
-char c;
-float f;
-double d;
-printf("size of variables type\nint=%d\nchar=%d\nfloat=%d\ndouble=%d\n",
-sizeof(i),sizeof(c),sizeof(f),sizeof(d));
-return 0;
+    int i;
+    char c;
+    float f;
+    double d;
+    printf("%d,%d,%d,%d", sizeof(i), sizeof(c), sizeof(f), sizeof(d));
+    return 0;
 }

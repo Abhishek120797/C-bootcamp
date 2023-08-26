@@ -1,32 +1,22 @@
-#include<stdio.h>
-void factor(int);
+#include <stdio.h>
+void prime_fact(int num);
 int main()
 {
     int num;
-    printf("Enter a number : ");
-    scanf("%d",&num);
-    factor(num);
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    prime_fact(num);
     return 0;
 }
-//function
-void factor(int x)
+
+void prime_fact(int num)
 {
-    int i,j,flag;
-    for(i=2;i<=x;i++)
+    for (int i = 2; num > 1; i++)
     {
-        if(x%i==0)
+        while (num % i == 0)
         {
-            flag=0;
-            for(j=2;j<i;j++)
-            {
-                if(i%j==0)
-                {
-                    flag=1;
-                    break;
-                }
-            }
-            if(flag==0)
-                printf("%d ",i);
+            printf("%d ", i);
+            num = num / i;
         }
     }
 }

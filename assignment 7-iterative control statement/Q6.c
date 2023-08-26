@@ -1,21 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-intnum,i,count;
-for(num=1;num<=100;num++)
+    for (int num = 0; num <= 100; num++)
     {
-count=0;
-for(i=1;i<=num;i++)
-    {
-if(num%i==0)
+        for (int i = num - 1; i > 0; i--)
         {
-count++;
+            if (num % i == 0)
+            {
+                if (i > 1)
+                    break;
+                else
+                    printf("%d ", num);
+            }
         }
     }
-if(count==2)
-    {
-printf("%d ",num);
-    }
-    }
-return 0;
+    return 0;
 }

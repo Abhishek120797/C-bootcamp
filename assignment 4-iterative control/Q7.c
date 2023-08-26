@@ -1,8 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int i;
-    for(i=10;i>0;i--)
-        printf("%d  " ,i*2);
+    for (int i = 10; i >= 1; i--)
+        printf("%d ", i * 2);
     return 0;
 }

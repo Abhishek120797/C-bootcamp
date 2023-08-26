@@ -1,25 +1,26 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-intnum, i,x,count;
-printf("enter a numbers");
-scanf("%d",&x);
-for(num=x+1;num!=0;num++)
+    int num1, flag = 0;
+    printf("Enter a numbers: ");
+    scanf("%d", &num1);
+    for (int num = num1 + 1; 1; num++)
     {
-count=0;
-for(i=1;i<=num;i++)
-    {
-if(num%i==0)
+        for (int i = num / 2; i > 0; i--)
         {
-count++;
+            if (num % i == 0)
+            {
+                if (i > 1)
+                    break;
+                else
+                    flag = 1;
+            }
+        }
+        if (flag == 1)
+        {
+            printf("%d", num);
+            break;
         }
     }
-if(count==2)
-    {
-printf("%d ",num);
-        x=0;
-break;
-    }
-    }
-return 0;
+    return 0;
 }

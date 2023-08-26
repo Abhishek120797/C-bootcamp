@@ -1,11 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-intx,y;
-printf("Enter a number\nnumber=");
-scanf("%d",&x);
-printf("Enter a digit\ndigit=");
-scanf("%d",&y);
-printf("Resulting number is %d",x*10+y);
-return 0;
+    int num, digit;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("Enter a digit you want to append: ");
+    scanf("%d", &digit);
+    num = num * 10 + digit;
+    printf("%d", num);
+    return 0;
 }
