@@ -1,43 +1,41 @@
-#include<stdio.h>
-#include<string.h>
-int factorial(int);
-int main()
+#include <stdio.h>
+#include <string.h>
+
+char user[10][25] = {"abhishek", "aniket", "avinash", "anchal", "sunita"};
+int check_user(char str[])
 {
-    int fact,num,flag=0,i;
-    char user[5][30]={"abhishek","rakesh","aniket","avinash","ramkumar"};
-    char user_name[30];
-    printf("Enter user name : ");
-    gets(user_name);
-    for(i=0;i<5;i++)
+    for (int i = 0; i < 5; i++)
     {
-        if(strcmp(user[i],user_name)==0)
-        {
-            printf("authentication succesfull\n");
-            printf("********factorial calculetor********\n");
-            flag=1;
-            break;
-        }
-    }
-    if(flag==1)
-    {
-    printf("enter a number ");
-    scanf("%d",&num);
-    fact=factorial(num);
-    printf("factorial of %d is %d",num,fact);
-    }
-    else
-    {
-        printf("incorrect user name");
+        if (strcmp(user[i], str) == 0)
+            return 1;
     }
     return 0;
 }
 
-int factorial(int x)
+int fact()
 {
-    int i,fac=1;
-    for(i=x;i>=1;i--)
+    int num, sum = 1;
+    printf("*********calculate factorial**********\n");
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    for (int i = 1; i <= num; i++)
     {
-        fac=fac*i;
+        sum = sum * i;
     }
-    return fac;
+    return sum;
+}
+
+int main()
+{
+    char username[25];
+    printf("Enter username :");
+    gets(username);
+    if (check_user(username))
+    {
+        printf("authentication sucsessfull\n");
+        printf("%d", fact());
+    }
+    else
+        printf("username not found");
+    return 0;
 }

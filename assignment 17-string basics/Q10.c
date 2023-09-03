@@ -1,18 +1,23 @@
-#include<stdio.h>
-#include<string.h>
-int main()
+#include <stdio.h>
+void frequency(char str[])
 {
-    char str[50];
-    int freq[150]={0},i=0;
-    printf("Enter a string :");
-    fgets(str,50,stdin);
-    while(i<strlen(str)-1)
+    int freq[256] = {0};
+    for (int i = 0; str[i]; i++)
     {
         freq[str[i]]++;
-        i++;
     }
-    for(i=0;i<150;i++)
-        if(freq[i]!=0)
-            printf("%c ==> %d\n",i,freq[i]);
+    for (int j = 0; j <= 255; j++)
+    {
+        if (freq[j] != 0)
+            printf("%c ==> %d\n", j, freq[j]);
+    }
+}
+
+int main()
+{
+    char chr[100];
+    printf("Enter string: ");
+    gets(chr);
+    frequency(chr);
     return 0;
 }

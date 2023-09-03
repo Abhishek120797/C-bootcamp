@@ -1,52 +1,45 @@
-#include<stdio.h>
-void sortmerge();//function decleration
+#include <stdio.h>
+void mergeArrey(int[], int, int[], int);
+
 int main()
 {
-    int a[]={19,18,17,15,12},b[]={16,14,13,11,10};
-    sortmerge(a,b);  //function call
+    int arr1[5] = {165, 155, 145, 135, 125}, arr2[5] = {160, 120, 130, 140, 150};
+    mergeArrey(arr1, 5, arr2, 5);
     return 0;
 }
 
-//function define
-void sortmerge(int x[],int y[])
+void mergeArrey(int num1[], int l1, int num2[], int l2)
 {
-int i=0,j=0,k,z[10];
-for(k=0;k<10;k++)
-{
-    if(j>=5)
+    int temp[10], i, j, k;
+    for (i = 0, j = 0, k = 0; i < l1 && j < l2; k++)
     {
-        while(k<10)
+        if (num1[i] > num2[j])
         {
-            z[k]=x[i];
-            i++;
-            k++;
-            if(k==10)
-                break;
-        }
-    }
-    else
-        if(i>=5)
-        {
-            while(k<10)
-            {
-                z[k]=y[j];
-                j++;
-                k++;
-                if(k==0)
-                    break;
-            }
-        }
-        if(x[i] > y[j])
-        {
-            z[k]=x[i];
+            temp[k] = num1[i];
             i++;
         }
         else
         {
-            z[k]=y[j];
+            temp[k] = num2[j];
             j++;
         }
-}
-for(k=0;k<10;k++)
-    printf("%d ",z[k]);
+    }
+
+    while (i < l1)
+    {
+        temp[k] = num1[i];
+        i++;
+        k++;
+    }
+    while (j < l2)
+    {
+        temp[k] = num1[j];
+        j++;
+        k++;
+    }
+
+    for (k = 0; k < l1 + l2; k++)
+    {
+        printf("%d ", temp[k]);
+    }
 }

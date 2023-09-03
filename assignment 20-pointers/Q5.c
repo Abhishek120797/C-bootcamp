@@ -1,11 +1,19 @@
-#include<stdio.h>
+#include <stdio.h>
+int max(int *a, int *b)
+{
+    if (*a >= *b)
+        return *a;
+    else
+        return *b;
+}
+
 int main()
 {
-    int a,b,*max;
-    printf("Enter two number : ");
-    scanf("%d",&a);
-    scanf("%d",&b);
-    max=a>b?&a:&b;
-    printf("max number is %d",*max);
+    int num1, num2;
+    printf("Enter two numbers: ");
+    scanf("%d", &num1);
+    scanf("%d", &num2);
+    printf("%d is max", max(&num1, &num2));
+
     return 0;
 }

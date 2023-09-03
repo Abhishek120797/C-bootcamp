@@ -1,14 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-  int num[10],i,swap[10];
-  printf("Enter 10 numbers : ");
-  for(i=0;i<10;i++)
+  int n, num[100], temp[100];
+  printf("how many number you want to enter: ");
+  scanf("%d", &n);
+
+  printf("Enter numbers: ");
+  for (int i = 0; i < n; i++)
   {
-    scanf("%d",&num[i]);
-    swap[i]=num[i];
+    scanf("%d", &num[i]);
+    temp[i] = num[i];
   }
-    for(i=0;i<10;i++)
-        printf("%d ",swap[i]);
-return 0;
+
+  for (int i = 0; i < n; i++)
+    printf("%d ", temp[i]);
+  return 0;
 }

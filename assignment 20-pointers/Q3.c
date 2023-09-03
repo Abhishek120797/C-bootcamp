@@ -1,30 +1,35 @@
-#include<stdio.h>
-void sort(int*,int);
+#include <stdio.h>
+#include <string.h>
+
+void sort(int *, int);
+
 int main()
 {
-    int a[10],i;
-    printf("Enter 10 numbers : ");
-    for(i=0;i<10;i++)
-        scanf("%d",&a[i]);
-    sort(a,10);
-    for(i=0;i<10;i++)
-        printf("%d ",a[i]);
- return 0;
+    int num[10];
+    printf("Enter 10 numbers:");
+    for (int i = 0; i < 10; i++)
+        scanf("%d", &num[i]);
+
+    sort(num, 10);
+
+    for (int i = 0; i < 10; i++)
+        printf("%d ", num[i]);
+    return 0;
 }
 
-void sort(int *x,int size)
+void sort(int *n, int l)
 {
-    int i,j,temp;
-    for(i=0;i<size;i++)
+    for (int i = 0; i < l; i++)
     {
-        for(j=0;j<size;j++)
+        for (int j = i + 1; j < l; j++)
         {
-            if(x[i]<x[j])
-                {
-                temp=x[i];
-                x[i]=x[j];
-                x[j]=temp;
-                }
+            if (*(n + i) > *(n + j))
+            {
+                int temp;
+                temp = *(n + i);
+                *(n + i) = *(n + j);
+                *(n + j) = temp;
+            }
         }
     }
 }

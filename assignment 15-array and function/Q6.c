@@ -1,16 +1,22 @@
-#include<stdio.h>
-int adjecentrepeat();	//function decleration
+#include <stdio.h>
+void printReverse(int[], int);
 int main()
 {
-    int i,a[12]={1,2,3,4,4,5,6,2,1,3};
-    printf("%d",adjecentrepeat(a));     //function call
+    int num[100], length;
+    printf("how many number you want to enter: ");
+    scanf("%d", &length);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < length; i++)
+        scanf("%d", &num[i]);
+
+    printReverse(num, length);
+
     return 0;
 }
-//function define
-int adjecentrepeat(int b[])
+
+void printReverse(int n[], int l)
 {
-    int i;
-for(i=0;i<9;i++)
-    if(b[i]==b[i+1])
-        return b[i];
+    for (int i = l - 1; i >= 0; i--)
+        printf("%d ", n[i]);
 }

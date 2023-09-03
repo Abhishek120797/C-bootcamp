@@ -1,26 +1,30 @@
-#include<stdio.h>
-#include<string.h>
-char* reverse();
-int main()
+#include <stdio.h>
+void strev(char str[])
 {
-    char a[50];
-    printf("Enter a string : ");
-    fgets(a,50,stdin);
-    printf("%s",reverse(a));
-    return 0;
+    int i, j;
+    char temp;
+
+    for (j = 0; str[j]; j++)
+    {
+    }
+    j = j - 2;
+
+    for (i = 0; i <= j; i++)
+    {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        j--;
+    }
 }
 
-char* reverse(char str[])
+int main()
 {
-    int i,j,t;
-    j=strlen(str)-1;
-        while(i<=j)
-            {
-                t=str[i];
-                str[i]=str[j];
-                str[j]=t;
-                i++;
-                j--;
-            }
-    return str;
+    char str[100], temp;
+    int j, i;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    strev(str);
+    printf("%s", str);
+    return 0;
 }

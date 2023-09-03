@@ -1,16 +1,16 @@
-struct employee
-{
-    int id;
-    char name[50];
-    int salary;
-};
-#include<stdio.h>
+#include <stdio.h>
+
 int main()
 {
-    int i;
-    struct employee emp_1={1,"Abhishek jaiswal",12000};
-    printf("emp id = %d\nemp name = %s\nemp salary = %d",emp_1.id,emp_1.name,emp_1.salary);
+    struct Employee
+    {
+        int id;
+        float salary;
+        char name[50];
+    };
+
+    struct Employee emp1 = {101, 10000, "Abhishek"};
+    printf("%d %.2f %s", emp1.id, emp1.salary, emp1.name);
+
     return 0;
 }
-
-

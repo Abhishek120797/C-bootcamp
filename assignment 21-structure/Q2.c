@@ -1,30 +1,38 @@
-#include<stdio.h>
-#include<string.h>
-struct employee input();
-struct employee
-    {
-        int id;
-        char name[50];
-        int salary;
-    };
+#include <stdio.h>
+#include <string.h>
+
+#define NAME_SIZE 50
+
+struct Employee getEmployee();
+
+struct Employee
+{
+    int id;
+    float salary;
+    char name[NAME_SIZE];
+};
+
 int main()
 {
-    int i;
-    struct employee emp[5];
-    printf("Enter five employee's id ,name and salary\n");
-    for(i=0;i<5;i++)
-        emp[i]=input();
+    struct Employee emp1;
+    emp1 = getEmployee();
+    printf("%d %.2f %s", emp1.id, emp1.salary, emp1.name);
     return 0;
 }
-struct employee input()
+
+struct Employee getEmployee()
 {
-    struct employee staff;
-    printf("Enter employee id : ");
-    scanf("%d",&staff.id);
+    struct Employee emp;
+    printf("Enter employee Id: ");
+    scanf("%d", &emp.id);
+
+    printf("Enter employee name: ");
     fflush(stdin);
-    printf("Enter employee name : ");
-    gets(staff.name);
-    printf("Enter employee salary : ");
-    scanf("%d",&staff.salary);
- return staff;
+    fgets(emp.name, NAME_SIZE, stdin);
+    emp.name[strlen(emp.name) - 1] = '\0';
+
+    printf("Enter employee salary: ");
+    scanf("%f", &emp.salary);
+
+    return emp;
 }

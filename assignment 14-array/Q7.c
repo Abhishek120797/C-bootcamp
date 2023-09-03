@@ -1,20 +1,52 @@
-#include<stdio.h>
+// #include<stdio.h>
+// int main()
+// {
+//     int num[10],temp;
+//     printf("Enter 10 numbers: ");
+
+//     for(int i=0;i<10;i++)
+//         scanf("%d",&num[i]);
+
+//     for(int i=0;i<10;i++)
+//     {
+//         for(int j=i+1;j<10;j++)
+//         {
+//             if(num[j]>num[i])
+//             {
+//                 temp=num[i];
+//                 num[i]=num[j];
+//                 num[j]=temp;
+//             }
+//         }
+
+//     }
+//     printf("%d ",num[1]);
+//     return 0;
+// }
+
+#include <stdio.h>
 int main()
 {
-    int num[10],i,j,temp;
-    printf("Enter 10 numbers : ");
-    for(i=0;i<10;i++)
-        scanf("%d",&num[i]);
-    for(i=0;i<10;i++)
+    int num[10], greatest_1, greatest_2 = 0;
+    printf("Enter 10 numbers: ");
+
+    for (int i = 0; i < 10; i++)
+        scanf("%d", &num[i]);
+
+    greatest_1 = num[0];
+    for (int i = 1; i < 10; i++)
     {
-        for(j=0;j<10;j++)
-            if(num[i]>num[j])
-            {
-                temp=num[j];
-                num[j]=num[i];
-                num[i]=temp;
-            }
+        if (num[i] > greatest_1)
+        {
+            greatest_2 = greatest_1;
+            greatest_1 = num[i];
+        }
+        else
+        {
+            if (num[i] > greatest_2)
+                greatest_2 = num[i];
+        }
     }
-        printf("%d is second largest number in array",num[1]);
+    printf("%d is second greatest", greatest_2);
     return 0;
 }

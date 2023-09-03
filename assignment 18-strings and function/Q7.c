@@ -1,26 +1,43 @@
-#include<stdio.h>
-#include<string.h>
-palindrome();
-int main()
+#include <stdio.h>
+
+int strlen(char str[])
 {
-    char a[50];
-    printf("Enter a string : ");
-    fgets(a,50,stdin);
-    palindrome(a);
-    return 0;
-}
-palindrome(char str[])
-{
-    int l,i;
-    l=strlen(str);
-    for(i=0;i<l/2;i++)
+    int i;
+    for (i = 0; str[i]; i++)
     {
-        if(str[i]!=str[l-2-i])
+    }
+    return i - 1;
+}
+
+char strupper(char str)
+{
+    if (str >= 'a' && str <= 'z')
+        return str - 32;
+}
+
+int palindrome(char str[])
+{
+    int l = strlen(str);
+    for (int i = 0; i < l / 2; i++)
+    {
+
+        if (strupper(str[i]) != strupper(str[l - 1 - i]))
         {
-            printf("Striing is not palindrome");
-            break;
+            return 0;
         }
     }
-    if(i==l/2)
-        printf("string is palindrome");
+    return 1;
+}
+
+int main()
+{
+    char chr[100];
+    printf("Enter a string: ");
+    fgets(chr, 100, stdin);
+    if (palindrome(chr))
+        printf("palindrome");
+    else
+        printf("Not palindrome");
+
+    return 0;
 }

@@ -1,25 +1,20 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+
 int main()
 {
     char str[100];
-    int i,alpha=0,digit=0,chare=0;
-    printf("Enter your name : ");
-    fgets(str,100,stdin);
-    for(i=0;str[i];i++)
+    int i, d_count = 0, s_count = -1, a_count = 0;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    for (i = 0; str[i]; i++)
     {
-        if(str[i]>=65 && str[i]<=90 || str[i]>=97 && str[i]<=122)
-            alpha++;
+        if (((str[i] >= 'a') && (str[i] <= 'z')) || ((str[i] >= 'A') && (str[i] <= 'Z')))
+            a_count++;
+        else if (str[i] >= '0' && str[i] <= '9')
+            d_count++;
         else
-        {
-            if(str[i]>=48 && str[i]<=57)
-                digit++;
-            else
-                chare++;
-        }
+            s_count++;
     }
-    printf("total no of alphabet is %d\n",alpha);
-    printf("total no of digit is %d\n",digit);
-    printf("total no of special charecter is %d\n",chare-1);
+    printf("Digit=%d\n Alphabet=%d\n special=%d", d_count, a_count, s_count);
     return 0;
 }

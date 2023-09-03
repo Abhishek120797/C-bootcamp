@@ -1,20 +1,21 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
 int main()
 {
-    char str[50],t;
-    int i=0,j;
-    printf("Enter your name : ");
-    fgets(str,50,stdin);
-    j=strlen(str)-1;
-    while(i<=j)
-        {
-            t=str[i];
-            str[i]=str[j];
-            str[j]=t;
-            i++;
-            j--;
-        }
-    printf("%s",str);
+    char str[100], temp;
+    int j, i;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    for (j = 0; str[j]; j++)
+    {
+    }
+    j = j - 2;
+    for (i = 0; i <= j; i++)
+    {
+        temp = str[i];
+        str[i] = str[j];
+        str[j] = temp;
+        j--;
+    }
+    printf("%s", str);
     return 0;
 }

@@ -1,21 +1,19 @@
-#include<stdio.h>
-void printbin(int);
+#include <stdio.h>
+void print_O(int);
 int main()
 {
     int num;
     printf("Enter a number : ");
-    scanf("%d",&num);
-    printbin(num);
+    scanf("%d", &num);
+    print_O(num);
     return 0;
 }
 
-//recursive function
-void printbin(int n)
+void print_O(int n)
 {
-    int;
-    if(n>7)
+    if (n >= 1)
     {
-     printbin(n/8);
+        print_O(n / 8);
+        printf("%d", n % 8);
     }
-    printf("%d",n%8);
 }

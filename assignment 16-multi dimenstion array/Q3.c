@@ -1,30 +1,42 @@
-#include<stdio.h>
+#include <stdio.h>
+
+void inputmatrix(int arr[][3])
+{
+    printf("Enter matrix element: ");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &arr[i][j]);
+    }
+}
+
+void displaymatrix(int arr[][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        printf("[ ");
+        for (int j = 0; j < 3; j++)
+            printf("%d ", arr[i][j]);
+        printf(" ]");
+        printf("\n");
+    }
+}
+
 int main()
 {
-    int a[3][3],b[3][3],i,j;
-    //first matrix
-    printf("Enter matrix elements : ");
-    for(i=0;i<3;i++)
-        for(j=0;j<3;j++)
-            scanf("%d",&a[i][j]);
-    for(i=0;i<3;i++)
+    int m1[3][3], t[3][3];
+
+    inputmatrix(m1);
+
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
         {
-        printf("[");
-        for(j=0;j<3;j++)
-            printf("%d ",a[i][j]);
-        printf("]\n");
+            t[i][j] = m1[j][i];
         }
-        //transpose of matrix
-    printf("transpose of matrix\n");
-    for(i=0;i<3;i++)
-        for(j=0;j<3;j++)
-            b[i][j]=a[j][i];
-    for(i=0;i<3;i++)
-        {
-        printf("[");
-        for(j=0;j<3;j++)
-            printf("%d ",b[i][j]);
-        printf("]\n");
-        }
+    }
+
+    displaymatrix(t);
+
     return 0;
 }

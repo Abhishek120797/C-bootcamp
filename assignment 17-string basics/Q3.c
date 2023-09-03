@@ -1,16 +1,17 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+
 int main()
 {
-    char str[50];
-    int i,count=0;
-    printf("Enter your name : ");
-    fgets(str,50,stdin);
-    for(i=0;str[i];i++)
+    char str[100];
+    int count = 0;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    for (int i = 0; str[i]; i++)
     {
-        if(str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
             count++;
     }
-    printf("in your name number of vowels is %d ",count);
+    printf("%d vowels", count);
+
     return 0;
 }

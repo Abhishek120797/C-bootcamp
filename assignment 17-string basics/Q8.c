@@ -1,13 +1,15 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
 int main()
 {
-    char str[50],copy[50]={0};
-    int i;
-    printf("Enter your name :");
-    fgets(str,50,stdin);
-    for(i=0;str[i];i++)
-        copy[i]=str[i];
-    printf("%s",copy);
+    char str1[100], str2[100];
+    int i = 0;
+    printf("Enter a string: ");
+    fgets(str1, 100, stdin);
+    for (i = 0; str1[i]; i++)
+    {
+        str2[i] = str1[i];
+    }
+    str2[i] = '\0';
+    printf("%s", str2);
     return 0;
 }

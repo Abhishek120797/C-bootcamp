@@ -1,19 +1,20 @@
-#include<stdio.h>
-#include<string.h>
-char* lower();
+#include <stdio.h>
+
+void strlower(char str[])
+{
+    for (int i = 0; str[i]; i++)
+    {
+        if (str[i] >= 'A' && str[i] <= 'Z')
+            str[i] = str[i] + 32;
+    }
+}
+
 int main()
 {
-    char a[100];
-    printf("Enter a string : ");
-    fgets(a,100,stdin);
-    printf("%s",lower(a));
+    char chr[100];
+    printf("Enter a string: ");
+    fgets(chr, 100, stdin);
+    strlower(chr);
+    printf("%s", chr);
     return 0;
-}
-char* lower(char str[])
-{
-    int i;
-    for(i=0;str[i];i++)
-        if(str[i]>=97 && str[i]<=122)
-            str[i]=str[i]-32;
-    return str;
 }

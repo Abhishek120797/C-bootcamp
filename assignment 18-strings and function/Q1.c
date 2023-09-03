@@ -1,17 +1,19 @@
-#include<stdio.h>
-#include<string.h>
-int str_len();
-int main()
-{
-    char a[100];
-    printf("Enter a string : ");
-    fgets(a,100,stdin);
-    printf("length of a string is %d",str_len(a));
-    return 0;
-}
-int str_len(char str[])
+#include <stdio.h>
+
+int strlen(char str[])
 {
     int i;
-    for(i=0;str[i];i++);
-    return i-1;
+    for (i = 0; str[i]; i++)
+    {
+    }
+    return i - 1;
+}
+
+int main()
+{
+    char chr[100];
+    printf("Enter a string: ");
+    fgets(chr, 100, stdin);
+    printf("length of string is %d", strlen(chr));
+    return 0;
 }

@@ -1,18 +1,26 @@
-#include<stdio.h>
-int minnum();	//function decleration
+#include <stdio.h>
+int smallest(int[], int);
 int main()
 {
-    int a[10]={3,3,6,8,9,12,7,4,5,5};
-    printf("%d is smallest number in array",minnum(a,10));	//function call
+    int num[100], length;
+    printf("how many number you want to enter: ");
+    scanf("%d", &length);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < length; i++)
+        scanf("%d", &num[i]);
+
+    printf("smallest number is %d", smallest(num, length));
     return 0;
 }
-//function define
-int minnum(int b[],int size)
+
+int smallest(int n[], int l)
 {
-    int i,min;
-    min=b[0];
-    for(i=0;i<size;i++)
-        if(b[i]<min)
-            min=b[i];
-  return min;
+    int temp = n[0];
+    for (int i = 1; i < l; i++)
+    {
+        if (n[i] < temp)
+            temp = n[i];
+    }
+    return temp;
 }

@@ -1,21 +1,26 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 int main()
 {
-    char *str,c;
-    int i=0,j=1;
-    str=(char*)malloc(sizeof(char));
-    printf("Enter string : ");
-    while(c!='\n')
+    char *name, c;
+    int i = 0, j = 1;
+
+    name = (char *)malloc(sizeof(char));
+
+    printf("Enter string: ");
+    while (c != '\n')
     {
-        c=getc(stdin);
+        c = getc(stdin);
         j++;
-        str=(char*)realloc(str,j*sizeof(char));
-        str[i]=c;
+        name = (char *)realloc(name, j * sizeof(char));
+        name[i] = c;
         i++;
     }
-    str[i]='\0';
-    printf("%s",str);
-    free(str);
+    name[i] = '\0';
+
+    printf("%s %d", name, strlen(name));
+    free(name);
     return 0;
 }

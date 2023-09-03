@@ -1,19 +1,18 @@
-#include<stdio.h>
-int addsquare(int);
+#include <stdio.h>
+int square(int);
 int main()
 {
     int num;
-    printf("Enter a number : ");
-    scanf("%d",&num);
-    printf("sum of square of first %d natural number is %d",num,addsquare(num));
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    printf("sum of square of first %d natural number is %d", num, square(num));
     return 0;
 }
 
-//recursive function
-int addsquare(int n)
+int square(int n)
 {
-    int sum=0;
-    if(n>=1)
-       sum=n*n+addsquare(n-1);
-return sum;
+    if (n == 1)
+        return 1;
+    else
+        return square(n - 1) + n * n;
 }

@@ -1,18 +1,26 @@
-#include<stdio.h>
-int maxnum();	//function decleration
+#include <stdio.h>
+int greatest(int[], int);
 int main()
 {
-    int a[10]={2,3,6,8,9,12,7,1,4,5};
-    printf("%d is greatest number in array",maxnum(a,10));	//function call
+    int num[100], length;
+    printf("how many number you want to enter: ");
+    scanf("%d", &length);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < length; i++)
+        scanf("%d", &num[i]);
+
+    printf("gretest number is %d", greatest(num, length));
     return 0;
 }
-//function define
-int maxnum(int b[],int size)
+
+int greatest(int n[], int l)
 {
-    int i,max=0;
-    for(i=0;i<size;i++)
-        for(i=0;i<size;i++)
-            if(b[i]>max)
-                max=b[i];
-  return max;
+    int temp = n[0];
+    for (int i = 1; i < l; i++)
+    {
+        if (n[i] > temp)
+            temp = n[i];
+    }
+    return temp;
 }

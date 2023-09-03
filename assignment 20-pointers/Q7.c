@@ -1,23 +1,32 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+#include <string.h>
+void count_const_vowel(char *s, int *v, int *c)
 {
-    char str[100],*ptr;
-    int i,vol=0,cons=0;
-    printf("Enter a string : ");
-    gets(str);
-    ptr=&str;
-    for(i=0;*(ptr+i);i++)
+    for (int i = 0; *(s + i); i++)
     {
-        if((*(ptr+i)=='a')|| (*(ptr+i)=='e')|| (*(ptr+i)=='i')|| (*(ptr+i)=='o')|| (*(ptr+i)=='u'))
-            vol++;
-        else
+        if (*(s + i) >= 'a' && *(s + i) <= 'z' || *(s + i) >= 'A' && *(s + i) <= 'Z')
         {
-            if((*(ptr+i)>='a') && (*(ptr+i)<='z') || (*(ptr+i)>='A') && (*(ptr+i)>='Z'))
-                cons++;
+            if (*(s + i) == 'a' || *(s + i) == 'e' || *(s + i) == 'i' || *(s + i) == 'o' || *(s + i) == 'u' ||
+                *(s + i) == 'A' || *(s + i) == 'E' || *(s + i) == 'I' || *(s + i) == 'O' || *(s + i) == 'U')
+                (*v)++;
+            else
+                (*c)++;
         }
     }
-    printf("number of vowels = %d and conconent= %d",vol,cons);
-
-    return 0;
 }
 
+int main()
+{
+    int vowel = 0;
+    int consonent = 0;
+    char str[100];
+
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    str[strcspn(str, "\n")] = '\0';
+
+    count_const_vowel(str, &vowel, &consonent);
+
+    printf("vowels ==> %d\nconsonent ==> %d", vowel, consonent);
+    return 0;
+}

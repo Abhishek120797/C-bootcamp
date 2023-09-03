@@ -1,31 +1,58 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int minimum(int *, int);
+int maximum(int *, int);
+
 int main()
 {
-    int *arr,size,i,max,min;
-    printf("Enter how many numbers do you have to get the sum: ");
-    scanf("%d",&size);
-    arr=(int*)calloc(size,sizeof(int));
-    if(arr==NULL)
+    int size, *num = NULL;
+
+    printf("Enter number of data you want to enter: ");
+    scanf("%d", &size);
+
+    num = (int *)calloc(size, sizeof(int));
+
+    if (num == NULL)
     {
-        printf("Your memory is full");
+        printf("memory allocation failed\n");
+        return 0;
     }
-    printf("Enter numbers :");
-    for(i=0;i<size;i++)
+
+    printf("Enter data values: ");
+    for (int i = 0; i < size; i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d", num + i);
     }
-    max=arr[0];
-    min=arr[0];
-    for(i=1;i<size;i++)
-    {
-        if(arr[i]>max)
-            max=arr[i];
-        if(arr[i]<min)
-            min=arr[i];
-    }
-    printf("maximum of numbers is %d\n",max);
-    printf("minimum of numbers is %d",min);
-    free(arr);
+
+    printf("minimum is %d\n", minimum(num, size));
+    printf("maximum is %d\n", maximum(num, size));
+
     return 0;
+}
+
+int minimum(int *arr, int len)
+{
+    int temp = *arr;
+
+    for (int i = 0; i < len; i++)
+    {
+        if (*(arr + i) < temp)
+            temp = *(arr + i);
+    }
+
+    return temp;
+}
+
+int maximum(int *arr, int len)
+{
+    int temp = *arr;
+
+    for (int i = 0; i < len; i++)
+    {
+        if (*(arr + i) > temp)
+            temp = *(arr + i);
+    }
+
+    return temp;
 }

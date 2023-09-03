@@ -1,33 +1,45 @@
-#include<stdio.h>
+#include <stdio.h>
+
+void inputmatrix(int arr[][3])
+{
+    printf("Enter matrix element: ");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &arr[i][j]);
+    }
+}
+
+void displaymatrix(int arr[][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        printf("[ ");
+        for (int j = 0; j < 3; j++)
+            printf("%d ", arr[i][j]);
+        printf(" ]");
+        printf("\n");
+    }
+}
+
 int main()
 {
-    int a[3][3],i,j,sum,R=1,C=1;
-    printf("Enter matrix elements : ");
-    for(i=0;i<3;i++)
-        for(j=0;j<3;j++)
-            scanf("%d",&a[i][j]);
-    for(i=0;i<3;i++)
+    int m[3][3], row, col;
+    inputmatrix(m);
+    displaymatrix(m);
+    for (int i = 0; i < 3; i++)
+    {
+        row = 0;
+        col = 0;
+        for (int j = 0; j < 3; j++)
         {
-        printf("[");
-        for(j=0;j<3;j++)
-            printf("%d ",a[i][j]);
-        printf("]\n");
+            row = row + m[i][j];
+            col = col + m[j][i];
         }
-    printf("sum of rows\n");
-    for(i=0;i<3;i++)
-        {
-        sum=0;
-        for(j=0;j<3;j++)
-            sum=sum+a[i][j];
-        printf("sum of Row %d = %d\n",R++,sum);
-        }
-    printf("sum of columns\n");
-    for(i=0;i<3;i++)
-        {
-        sum=0;
-        for(j=0;j<3;j++)
-            sum=sum+a[j][i];
-        printf("sum of columns %d = %d\n",C++,sum);
-        }
+        printf("row[%d]=", i + 1);
+        printf("%d ", row);
+        printf("col[%d]=", i + 1);
+        printf("%d ", col);
+    }
     return 0;
 }

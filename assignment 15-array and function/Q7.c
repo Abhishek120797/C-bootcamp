@@ -1,18 +1,43 @@
-#include<stdio.h>
-int duplicate(); 	//function decleration
+#include <stdio.h>
+int occrs(int[], int);
 int main()
 {
-    int a[]={1,1,2,2,3,3,4,4,5,6,7,8};
-    printf("total number of duplicate elements are %d",duplicate(a));    //function call
+    int num[100], length, result;
+    printf("how many number you want to enter: ");
+    scanf("%d", &length);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < length; i++)
+        scanf("%d", &num[i]);
+
+    result = occrs(num, length);
+
+    if (result)
+        printf("%d elements are duplicate", result);
+    else
+        printf("no elements are duplicate");
     return 0;
 }
-//function define
-int duplicate(int b[])
+
+int occrs(int n[], int l)
 {
-int i,j,count=0;
-for(i=0;i<11;i++)
-    for(j=i+1;j<=11;j++)
-        if(b[i]==b[j])
+    int count = 0, temp[100] = {0};
+
+    for (int i = 0; i < l; i++)
+    {
+        for (int j = i + 1; j < l; j++)
+        {
+            if (n[i] == n[j])
+            {
+                temp[n[i]]++;
+            }
+        }
+    }
+    for (int i = 0; i < 100; i++)
+    {
+        if (temp[i] != 0)
             count++;
-return count;
+    }
+
+    return count;
 }

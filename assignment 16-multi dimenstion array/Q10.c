@@ -1,28 +1,59 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+void inputmatrix(int arr[][3])
 {
-    int a[4][4]={1,1,0,0,0,1,0,0,0,1,1,1,1,0,0,0},i,j,max=0,count,index;
-    for(i=0;i<4;i++)
-        {
-        printf("[");
-        for(j=0;j<4;j++)
-            printf("%d ",a[i][j]);
-        printf("]\n");
-        }
-    for(i=0;i<4;i++)
+    printf("Enter matrix element: ");
+    for (int i = 0; i < 3; i++)
     {
-        count=0;
-        for(j=0;j<4;j++)
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &arr[i][j]);
+    }
+}
+
+void displaymatrix(int arr[][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        printf("[ ");
+        for (int j = 0; j < 3; j++)
+            printf("%d ", arr[i][j]);
+        printf(" ]");
+        printf("\n");
+    }
+}
+
+void row_Maxium_contain_1(int m[][3])
+{
+    int count[3], row_no;
+    for (int i = 0; i < 3; i++)
+    {
+        count[i] = 0;
+        for (int j = 0; j < 3; j++)
         {
-            if(a[i][j]==1)
-                count++;
-        }
-        if(count>max)
-        {
-            max=count;
-            index=i+1;
+            if (m[i][j] == 1)
+            {
+                count[i]++;
+            }
         }
     }
-    printf("%drd row has maximum 1s",index);
+    int temp = count[0];
+    row_no = 0;
+    for (int i = 1; i < 3; i++)
+    {
+        if (count[i] > temp)
+        {
+            temp = count[i];
+            row_no = i;
+        }
+    }
+    printf("row %d has maximum 1s", row_no + 1);
+}
+
+int main()
+{
+    int m[3][3];
+    inputmatrix(m);
+    displaymatrix(m);
+    row_Maxium_contain_1(m);
     return 0;
 }

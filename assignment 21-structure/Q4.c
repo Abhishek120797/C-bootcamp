@@ -1,47 +1,71 @@
-#include<stdio.h>
-#include<string.h>
-struct employee input();
-void max_salary();
-struct employee
-    {
-        int id;
-        char name[50];
-        int salary;
-    };
+#include <stdio.h>
+#include <string.h>
+
+#define NAME_SIZE 50
+#define TOTAL_EMP 10
+
+struct Employee
+{
+    int id;
+    float salary;
+    char name[NAME_SIZE];
+};
+
+struct Employee getEmployee();
+void display_Employee(struct Employee);
+void high_salary_Employee(struct Employee[]);
+
 int main()
 {
-    int i;
-    struct employee emp[10];
-    printf("Enter 10 employee's id ,name and salary\n");
-    for(i=0;i<10;i++)
-        emp[i]=input();
-        max_salary(emp,10);
+    struct Employee emp[TOTAL_EMP] = {
+        {101, 4000, "Abhishek"},
+        {102, 5000, "Aniket"},
+        {103, 7000, "Avinash"},
+        {104, 9000, "Anchal"},
+        {105, 1000, "Sunita"},
+        {106, 2000, "Ramkumar"},
+        {107, 4000, "shalu"},
+        {108, 8000, "vicky"},
+        {109, 5000, "Aashu"},
+        {110, 3000, "babu"},
+    };
+
+    high_salary_Employee(emp);
     return 0;
 }
-struct employee input()
+
+struct Employee getEmployee()
 {
-    struct employee staff;
-    printf("Enter employee id : ");
-    scanf("%d",&staff.id);
+    struct Employee emp;
+    printf("Enter employee Id: ");
+    scanf("%d", &emp.id);
+
+    printf("Enter employee name: ");
     fflush(stdin);
-    printf("Enter employee name : ");
-    gets(staff.name);
-    printf("Enter employee salary : ");
-    scanf("%d",&staff.salary);
- return staff;
+    fgets(emp.name, NAME_SIZE, stdin);
+    emp.name[strlen(emp.name) - 1] = '\0';
+
+    printf("Enter employee salary: ");
+    scanf("%f", &emp.salary);
+
+    return emp;
 }
-void max_salary(struct employee staff[],int size)
+
+void display_Employee(struct Employee emp)
 {
-    int i,high;
-    high=staff[0].salary;
-    for(i=0;i<size;i++)
+    printf("Employee Id ==> %d\n", emp.id);
+    printf("Employee Name ==> %s\n", emp.name);
+    printf("Employee Salary ==> %.2f\n", emp.salary);
+}
+
+void high_salary_Employee(struct Employee emp[])
+{
+    struct Employee temp = emp[0];
+
+    for (int i = 0; i < TOTAL_EMP; i++)
     {
-        if(staff[i].salary>high)
-            high=staff[i].salary;
+        if (emp[i].salary > temp.salary)
+            temp = emp[i];
     }
-    for(i=0;i<size;i++)
-    {
-        if(staff[i].salary==high)
-            printf("highest salary employee are \n%d %s %d",staff[i].id,staff[i].name,staff[i].salary);
-    }
+    display_Employee(temp);
 }

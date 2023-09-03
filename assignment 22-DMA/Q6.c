@@ -1,27 +1,31 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 int main()
 {
-    int *arr,size,i,max;
-    printf("Enter how many numbers do you have to get the sum: ");
-    scanf("%d",&size);
-    arr=(int*)calloc(size,sizeof(int));
-    if(arr==NULL)
+    int *num = NULL, large, size;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &size);
+
+    num = (int *)malloc(size * sizeof(int));
+    if (num == NULL)
     {
-        printf("Your memory is full");
+        printf("memory allocation failed !");
+        return 0;
     }
-    printf("Enter numbers :");
-    for(i=0;i<size;i++)
+
+    printf("\nEnter %d numbers: ", size);
+    for (int i = 0; i < size; i++)
+        scanf("%d", num + i);
+
+    large = *(num + 0);
+    for (int i = 0; i < size; i++)
     {
-        scanf("%d",&arr[i]);
+        if (*(num + i) > large)
+            large = *(num + i);
     }
-    max=arr[0];
-    for(i=1;i<size;i++)
-    {
-        if(arr[i]>max)
-        max=arr[i];
-    }
-    printf("maximum of numbers is %d",max);
-    free(arr);
+
+    printf("\nlargest number is %d", large);
     return 0;
 }

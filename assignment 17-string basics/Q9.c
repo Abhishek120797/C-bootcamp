@@ -1,21 +1,31 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+
 int main()
 {
-    char str[50];
-    int i,j,temp;
-    printf("Enter a string : ");
-    fgets(str,50,stdin);
-    for(i=0;str[i];i++)
+    char str[100], temp;
+    int i, j;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+
+    for (i = 0; str[i] != '\n'; i++)
     {
-        for(j=0;str[j];j++)
-            if(str[i]<str[j])
-            {
-                temp=str[j];
-                str[j]=str[i];
-                str[i]=temp;
-            }
+        if (str[i] == '\0')
+            break;
     }
-    printf("%s",str);
+    str[i] = '\0';
+
+    for (i = 0; str[i]; i++)
+    {
+        for (j = i + 1; str[j]; j++)
+        {
+            if (str[i] > str[j])
+            {
+                temp = str[j];
+                str[j] = str[i];
+                str[i] = temp;
+            }
+        }
+    }
+    printf("%s", str);
     return 0;
 }

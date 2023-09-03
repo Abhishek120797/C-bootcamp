@@ -1,13 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
+
+void sum_element(int *n, int l, int *s)
+{
+    for (int i = 0; i < l; i++)
+        *s = *s + *(n + i);
+}
+
 int main()
 {
-    int a[10],i,*ptr,sum=0;
-    printf("Enter 10 numbers : ");
-    for(i=0;i<10;i++)
-        scanf("%d",&a[i]);
-    ptr=a;
-    for(i=0;i<10;i++)
-        sum=sum+*(ptr+i);
-    printf("sum of 10 numbers is %d",sum);
-return 0;
+    int num[100], l, sum = 0;
+    printf("Enter how many numbers you want to enter: ");
+    scanf("%d", &l);
+    printf("Enter %d numbers:", l);
+    for (int i = 0; i < l; i++)
+        scanf("%d", &num[i]);
+
+    sum_element(num, l, &sum);
+    printf("%d", sum);
+    return 0;
 }

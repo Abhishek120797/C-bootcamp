@@ -1,13 +1,19 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+
 int main()
 {
-    char a[5][30]={"abhi.jais1211@gmail.com","vicky.jais1211@gmail.com","rkj7215@gmail.com","sangeetagmail.com","rakeshgmail.com"};
-    int i;
-    for(i=0;i<5;i++)
+    char email[][30] = {"abhi.jais1211@gmail.com", "vicky@gmail.com",
+                        "anchal1211gmail.com", "ajstyle12@gmail.com",
+                        "avi1211gmail.com"};
+
+    for (int i = 0; i < 5; i++)
     {
-        if(strchr(a[i],'@')!=0)
-            printf("%s\n",a[i]);
+        if (strchr(email[i], '@') != 0)
+        {
+            printf("%s\n", email[i]);
+        }
     }
+
     return 0;
 }

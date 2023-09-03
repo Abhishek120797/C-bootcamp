@@ -1,35 +1,35 @@
-#include<stdio.h>
-#include<string.h>
-int compare();
-int main()
+#include <stdio.h>
+int strcmp(char str1[], char str2[])
 {
-    char a[50],b[50];
-    int flag;
-    printf("Enter first string : ");
-    fgets(a,50,stdin);
-    printf("Enter second string : ");
-    fgets(b,50,stdin);
-    flag=compare(a,b);
-    if(flag==0)
-        printf("both strings are same");
-    else
-        printf("both strings are not same");
+    for (int i = 0; str1[i] && str2[i]; i++)
+    {
+        if (str1[i] - str2[i] > 0)
+            return 1;
+        else if (str1[i] - str2[i] < 0)
+            return -1;
+        else
+            continue;
+    }
     return 0;
 }
-int compare(char str_1[],char str_2[])
-{
-    int i,flag_c=0;
-    for(i=0;str_1[i]!='\0' || str_2[i]!='\0';i++)
-    {
-        if(str_1[i]!=str_2[i])
-        {
-            flag_c=1;
-            break;
-        }
-    }
-    if(flag_c==1)
-        return 1;
-    else
-        return 0;
-}
 
+int main()
+{
+    char chr1[100], chr2[100];
+    int r;
+    printf("Enter a first string:");
+    fgets(chr1, 100, stdin);
+    printf("Enter a second string:");
+    fgets(chr2, 100, stdin);
+    r = strcmp(chr1, chr2);
+    if (r > 0)
+        printf("%s is greater", chr1);
+    else
+    {
+        if (r < 0)
+            printf("%s is greater", chr2);
+        else
+            printf("Equal");
+    }
+    return 0;
+}

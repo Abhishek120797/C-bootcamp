@@ -1,62 +1,79 @@
-#include<stdio.h>
-#include<string.h>
-struct employee input();
-void sort_by_name();
-struct employee
-    {
-        int id;
-        char name[50];
-        int salary;
-    };
+#include <stdio.h>
+#include <string.h>
+
+#define NAME_SIZE 50
+#define TOTAL_EMP 10
+
+struct Employee
+{
+    int id;
+    float salary;
+    char name[NAME_SIZE];
+};
+
+struct Employee getEmployee();
+void display_Employee(struct Employee);
+void sort_employee(struct Employee[]);
 
 int main()
 {
-    int i;
-    struct employee emp[10];
-    printf("Enter 10 employee's id ,name and salary\n");
-    for(i=0;i<10;i++)
-        emp[i]=input();
+    struct Employee emp_arr[TOTAL_EMP] = {
+        {101, 4000, "Abhishek"},
+        {102, 5000, "aniket"},
+        {103, 7000, "Avinash"},
+        {104, 9000, "Anchal"},
+        {105, 1000, "Sunita"},
+        {106, 2000, "ramkumar"},
+        {107, 4000, "Shalu"},
+        {108, 8000, "Vicky"},
+        {109, 5000, "Aashu"},
+        {110, 3000, "babu"},
+    };
 
-    sort_by_name(emp,10);
+    sort_employee(emp_arr);
 
-    for(i=0;i<10;i++)
-        display(emp[i]);
+    for (int i = 0; i < TOTAL_EMP; i++)
+        display_Employee(emp_arr[i]);
     return 0;
 }
 
-struct employee input()
+struct Employee getEmployee()
 {
-    struct employee staff;
-    printf("Enter employee id : ");
-    scanf("%d",&staff.id);
+    struct Employee emp;
+    printf("Enter employee Id: ");
+    scanf("%d", &emp.id);
+
+    printf("Enter employee name: ");
     fflush(stdin);
-    printf("Enter employee name : ");
-    gets(staff.name);
-    printf("Enter employee salary : ");
-    scanf("%d",&staff.salary);
- return staff;
+    fgets(emp.name, NAME_SIZE, stdin);
+    emp.name[strlen(emp.name) - 1] = '\0';
+
+    printf("Enter employee salary: ");
+    scanf("%f", &emp.salary);
+
+    return emp;
 }
 
-
-void sort_by_name(struct employee staff[],int size)
+void display_Employee(struct Employee emp)
 {
-    int i,j;
-    struct employee temp;
-    for(i=1;i<=size-1;i++)
+    printf("Employee Id ==> %d\n", emp.id);
+    printf("Employee Name ==> %s\n", emp.name);
+    printf("Employee Salary ==> %.2f\n", emp.salary);
+}
+
+void sort_employee(struct Employee emp[])
+{
+    struct Employee temp;
+    for (int i = 0; i < TOTAL_EMP - 1; i++)
     {
-        for(j=0;j<=size-1-i;j++)
+        for (int j = i + 1; j < TOTAL_EMP; j++)
         {
-            if(strcmp(staff[j].name,staff[j+1].name)>0)
+            if (strcasecmp(emp[i].name, emp[j].name) > 0)
             {
-            temp=staff[j];
-            staff[j]=staff[j+1];
-            staff[j+1]=temp;
+                temp = emp[i];
+                emp[i] = emp[j];
+                emp[j] = temp;
             }
         }
     }
-}
-
-void display(struct employee staff)
-{
-    printf("%d %s %d\n",staff.id,staff.name,staff.salary);
 }

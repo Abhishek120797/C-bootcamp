@@ -1,14 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
+
+void print_reverse(char *s)
+{
+    int l = strlen(s);
+
+    for (l = l - 1; l >= 0; l--)
+        printf("%c", *(s + l));
+}
+
 int main()
 {
-    char a[100],*ptr;
-    int i,count=0;
-    printf("Enter a string : ");
-    gets(a);
-    ptr=a;
-    for(i=0;*(ptr+i)!='\0';i++)
-        count++;
-    for(i=count-1;i>=0;i--)
-        printf("%c",*(ptr+i));
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    str[strcspn(str, "\n")] = '\0';
+
+    print_reverse(str);
+
     return 0;
 }

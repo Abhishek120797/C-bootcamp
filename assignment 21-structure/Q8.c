@@ -1,41 +1,48 @@
-struct student
+#include <stdio.h>
+#include <string.h>
+
+#define SIZE 10
+
+struct Student
 {
-    int rollno;
+    int roll_no;
     char name[50];
-    float chem,math,phy;
+    int age;
 };
-#include<stdio.h>
-struct student input();
-void display();
+
+void getStudent(struct Student *);
+void displyStudent(struct Student *);
+
 int main()
 {
-    struct student s[10];
-    int i;
-    printf("Enter 10 student's roll_no,name,subject marks\n");
-    for(i=0;i<10;i++)
-        s[i]=input();
-    for(i=0;i<10;i++)
-        display(s[i]);
-    return 0;
-}
-struct student input()
-{
-    struct student s;
-    printf("Enter roll no : ");
-    scanf("%d",&s.rollno);
-    fflush(stdin);
-    printf("Enter name : ");
-    gets(s.name);
-    printf("Enter chemestry marks : ");
-    scanf("%f",&s.chem);
-    printf("Enter maths marks : ");
-    scanf("%f",&s.math);
-    printf("Enter physics : ");
-    scanf("%f",&s.phy);
+    struct Student stud[SIZE];
 
- return s;
+    for (int i = 0; i < SIZE; i++)
+    {
+        getStudent(&stud[i]);
+    }
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        displyStudent(&stud[i]);
+    }
 }
-void display(struct student s)
+
+void getStudent(struct Student *s)
 {
-    printf("%d %s %f %f %f\n",s.rollno,s.name,s.chem,s.math,s.phy);
+    printf("Enter roll no: ");
+    scanf("%d", &(s->roll_no));
+
+    printf("Enter name: ");
+    fflush(stdin);
+    fgets((s->name), 50, stdin);
+    s->name[strcspn(s->name, "\n")] = '\0';
+
+    printf("Enter age: ");
+    scanf("%d", &(s->age));
+}
+
+void displyStudent(struct Student *s)
+{
+    printf("%d %s %d\n", s->roll_no, s->name, s->age);
 }

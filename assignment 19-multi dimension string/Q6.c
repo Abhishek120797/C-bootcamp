@@ -1,24 +1,36 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+
 int main()
 {
-    char a[10][20]={"madam","level","racecar","abhishek","surat","cast","english","eye","train","malayalam"};
-    int i,j,l,flag;
-    for(i=0;i<10;i++)
+    char str[5][20];
+    int flag, k;
+
+    printf("Enter 5 string: ");
+    for (int i = 0; i < 5; i++)
+        fgets(str[i], 20, stdin);
+
+    for (int i = 0; i < 5; i++)
     {
-        flag=0;
-        l=strlen(a[i]);
-        for(j=0;a[i][j];j++)
+        flag = 0;
+        k = strlen(str[i]) - 2;
+        for (int j = 0; j <= k / 2; j++)
         {
-            if(a[i][j]!=a[i][l-1])
+            if (str[i][j] != str[i][k])
             {
-             flag=1;
-             break;
+                flag = 1;
+                break;
             }
-            l--;
+            else
+            {
+                k--;
+            }
         }
-        if(flag==0)
-            printf("%s\n",a[i]);
+        if (flag == 0)
+        {
+            printf("%s", str[i]);
+        }
     }
+
     return 0;
 }

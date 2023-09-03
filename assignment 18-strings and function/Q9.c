@@ -1,43 +1,56 @@
-#include<stdio.h>
-#include<string.h>
-void swap();
-int main()
-{
-    int i=0,start=0,end=0,flag=0;
-    char a[100];
-    printf("Enter a string : ");
-    fgets(a,100,stdin);
-    while(a[i]!='\0')
-    {
-        while(a[i]!=' ')
-        {
-            if(a[i]=='\0')
-            {
-                flag=1;
-                break;
-            }
-            end++;
-            i++;
-        }
-        swap(a,start,end-1);
-        if(flag==1)
-            break;
-        start=++end;
-        i++;
-    }
-    swap(a,0,i-1);
-    printf("%s",a);
-    return 0;
-}
-void swap(char str[],int i,int j)
+#include <stdio.h>
+#include <string.h>
+
+void revers_string(char str[], int l)
 {
     char temp;
-    while(i<=j)
+    for (int i = 0; i < l; i++, l--)
     {
-        temp=str[i];
-        str[i]=str[j];
-        str[j]=temp;
-        i++;
-        j--;
+        temp = str[i];
+        str[i] = str[l];
+        str[l] = temp;
     }
+}
+
+void reverse_string_words(char str[])
+{
+    int start = 0, end = 0, i;
+    for (i = 0; str[i]; i++)
+    {
+        if (str[i] == ' ')
+        {
+            end = i - 1;
+            while (start < end)
+            {
+                char temp;
+                temp = str[start];
+                str[start] = str[end];
+                str[end] = temp;
+                start++;
+                end--;
+            }
+            start = i + 1;
+        }
+    }
+    end = i - 1;
+    while (start < end)
+    {
+        char temp;
+        temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+        start++;
+        end--;
+    }
+    revers_string(str, i - 1);
+}
+
+int main()
+{
+    char str[100];
+    printf("Enter a string : ");
+    gets(str);
+    reverse_string_words(str);
+    printf("%s", str);
+    return 0;
 }

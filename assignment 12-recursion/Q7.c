@@ -1,20 +1,19 @@
-#include<stdio.h>
-void printnum(int);
+#include <stdio.h>
+void print_N(int);
 int main()
 {
     int num;
     printf("Enter a number : ");
-    scanf("%d",&num);
-    printnum(num);
+    scanf("%d", &num);
+    print_N(num);
     return 0;
 }
 
-//recursive function
-void printnum(int n)
+void print_N(int n)
 {
-    if(n>0)
+    if (n >= 1)
     {
-    printnum(n-1);
-    printf("%d ",n*n);
+        print_N(n - 1);
+        printf("%d ", n * n);
     }
 }

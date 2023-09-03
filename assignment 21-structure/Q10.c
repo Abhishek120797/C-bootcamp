@@ -1,43 +1,60 @@
-struct marks
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_SIZE 5
+
+struct Marks
 {
-    int rollno;
+    int roll_no;
     char name[50];
-    float chem,math,phy;
+    float chem_marks;
+    float maths_marks;
+    float phy_marks;
 };
-#include<stdio.h>
-struct marks input();
-void display_percent();
+
+void getStudentMarks(struct Marks *);
+void displyStudentPercentage(struct Marks *);
+
 int main()
 {
-    struct marks stu[5];
-    int i;
-    printf("Enter 5 student's roll_no,name,subject marks\n");
-    for(i=0;i<5;i++)
-        stu[i]=input();
-    for(i=0;i<5;i++)
-        display_percent(stu[i]);
-    return 0;
-}
-struct marks input()
-{
-    struct marks s;
-    printf("Enter roll no : ");
-    scanf("%d",&s.rollno);
-    fflush(stdin);
-    printf("Enter name : ");
-    gets(s.name);
-    printf("Enter chemestry marks : ");
-    scanf("%f",&s.chem);
-    printf("Enter maths marks : ");
-    scanf("%f",&s.math);
-    printf("Enter physics : ");
-    scanf("%f",&s.phy);
+    struct Marks stud[MAX_SIZE];
 
- return s;
+    printf("\n-------Enter student Marks-------\n");
+
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        getStudentMarks(&stud[i]);
+    }
+    printf("\n\n");
+    for (int i = 0; i < MAX_SIZE; i++)
+    {
+        displyStudentPercentage(&stud[i]);
+    }
 }
-void display_percent(struct marks s)
+
+void getStudentMarks(struct Marks *s)
 {
-    float percent;
-    percent=(s.chem+s.math+s.phy)*100/300;
-    printf("Roll no %d  %s your percent is %f\n",s.rollno,s.name,percent);
+    printf("Enter roll no: ");
+    scanf("%d", &(s->roll_no));
+
+    printf("Enter name: ");
+    fflush(stdin);
+    fgets((s->name), 50, stdin);
+    s->name[strcspn(s->name, "\n")] = '\0';
+
+    printf("Enter marks in chemistry: ");
+    scanf("%f", &(s->chem_marks));
+
+    printf("Enter marks in Mathematics: ");
+    scanf("%f", &(s->maths_marks));
+
+    printf("Enter marks in physics: ");
+    scanf("%f", &(s->phy_marks));
+}
+
+void displyStudentPercentage(struct Marks *s)
+{
+    float total_marks = s->chem_marks + s->maths_marks + s->phy_marks;
+    float percent = (total_marks / 300) * 100;
+    printf("%d %s %.2f %%\n", s->roll_no, s->name, percent);
 }

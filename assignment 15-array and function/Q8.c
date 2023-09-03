@@ -1,24 +1,35 @@
-#include<stdio.h>
-void duplicate(); 	//function decleration
+#include <stdio.h>
+void uniqueElement(int[], int);
 int main()
 {
-    int a[]={1,2,1,3,2,3,4,4,5,6,7,8};
-    duplicate(a);	//function call
+    int num[100], length;
+    printf("how many number you want to enter: ");
+    scanf("%d", &length);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < length; i++)
+        scanf("%d", &num[i]);
+
+    uniqueElement(num, length);
     return 0;
 }
-//function define
-void duplicate(int b[])
+
+void uniqueElement(int n[], int l)
 {
-int i,j,count;
-for(i=0;i<12;i++)
-{
-    count=0;
-    for(j=0;j<12;j++)
+    int temp[100] = {0};
+    for (int i = 0; i < l; i++)
     {
-      if(b[i]==b[j])
-        count++;
+        for (int j = 0; j < l; j++)
+        {
+            if (n[i] == n[j])
+            {
+                temp[n[i]]++;
+            }
+        }
     }
-    if(count!=2)
-        printf("%d ",b[i]);
-}
+    for (int i = 0; i < 100; i++)
+    {
+        if (temp[i] == 1)
+            printf("%d ", i);
+    }
 }

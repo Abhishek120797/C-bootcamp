@@ -1,12 +1,13 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+
 int main()
 {
-    char str[50];
-    int i;
-    printf("Enter your name : ");
-    fgets(str,50,stdin);
-    for(i=0;str[i];i++);
-    printf("size of string is %d",i);
+    char str[100];
+    int count = 0;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    for (int i = 0; str[i]; i++)
+        count++;
+    printf("length of string is %d", count);
     return 0;
 }

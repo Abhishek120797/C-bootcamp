@@ -1,18 +1,31 @@
-#include<stdio.h>
-void frequency();     //function decleration
+#include <stdio.h>
+void frequency_count(int[], int);
 int main()
 {
-    int a[10]={1,2,3,1,2,4,5,3,6,6};
-    frequency(a);    //function call
+    int num[100], len;
+
+    printf("how many number you want to enter: ");
+    scanf("%d", &len);
+
+    for (int i = 0; i < len; i++)
+        scanf("%d", &num[i]);
+
+    frequency_count(num, len);
+
     return 0;
 }
-//function define
-void frequency(int b[])
+
+void frequency_count(int n[], int l)
 {
-    int c[10]={0},i;
-    for(i=0;i<10;i++)
-        c[b[i]]++;
-    for(i=0;i<10;i++)
-        if(c[i]!=0)
-            printf("%d = %d\n",i,c[i]);
+    int temp[100] = {0};
+    for (int i = 0; i < l; i++)
+    {
+        temp[n[i]]++;
+    }
+
+    for (int j = 0; j < 100; j++)
+    {
+        if (temp[j] != 0)
+            printf("%d = %d\n", j, temp[j]);
+    }
 }

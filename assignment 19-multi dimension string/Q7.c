@@ -1,31 +1,40 @@
-#include<stdio.h>
-#include<string.h>
-int main()
+#include <stdio.h>
+#include <string.h>
+
+void check_ip(char ip[][25])
 {
-    char ip[4][25],*byte,temp[25];
-    int num,i,flag;
-    printf("enter 4 ip address\n");
-    for(i=0;i<4;i++)
-        gets(ip[i]);
-    printf("list of valid ip address\n");
-    for(i=0;i<4;i++)
+    int num, count;
+    char *token, temp[25];
+    for (int i = 0; i < 4; i++)
     {
-        strcpy(temp,ip[i]);
-        byte=(strtok(temp,"."));
-        flag=0;
-        while(byte!=NULL)
+        count = 0;
+        strcpy(temp, ip[i]);
+        token = strtok(temp, ".");
+        while (token != NULL)
         {
-            num=atoi(byte);
-            if(num>=0 && num<=255)
+            num = atoi(token);
+            if (num >= 0 && num <= 255)
             {
-                flag++;
+                token = strtok(NULL, ".");
+                count++;
             }
-            byte=strtok(NULL,".");
+            else
+                break;
         }
-        if(flag==4)
+        if (count == 4)
         {
-            printf("%s\n",ip[i]);
+            printf("%s\n", ip[i]);
         }
     }
+}
+
+int main()
+{
+    char ip[4][25];
+    printf("Enter 4 ip adddress: ");
+    for (int i = 0; i < 4; i++)
+        gets(ip[i]);
+
+    check_ip(ip);
     return 0;
 }

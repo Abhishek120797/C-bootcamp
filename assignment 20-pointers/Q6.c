@@ -1,12 +1,22 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
+
+int string_length(char *s)
+{
+    int i;
+    for (i = 0; s[i]; i++)
+    {
+    }
+    return i;
+}
+
 int main()
 {
-    char str[100],*ptr;
-    int i;
-    printf("Enter a string : ");
-    gets(str);
-    ptr=&str;
-    for(i=0;*(ptr+i);i++);
-    printf("length of string is %d",i);
-    return 0;
+    char str[100];
+    int len;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    str[strcspn(str, "\n")] = '\0';
+    len = string_length(str);
+    printf("%d", len);
 }

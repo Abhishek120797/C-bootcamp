@@ -1,42 +1,38 @@
-#include<stdio.h>
+#include <stdio.h>
+
+void inputmatrix(int arr[][3])
+{
+    printf("Enter matrix element: ");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            scanf("%d", &arr[i][j]);
+    }
+}
+
+void displaymatrix(int arr[][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        printf("[ ");
+        for (int j = 0; j < 3; j++)
+            printf("%d ", arr[i][j]);
+        printf(" ]");
+        printf("\n");
+    }
+}
+
 int main()
 {
-    int a[3][3],b[3][3],sum[3][3],i,j;
-    //first matrix
-    printf("Enter first matrix elements : ");
-    for(i=0;i<3;i++)
-        for(j=0;j<3;j++)
-            scanf("%d",&a[i][j]);
-    for(i=0;i<3;i++)
-        {
-        printf("[");
-        for(j=0;j<3;j++)
-            printf("%d ",a[i][j]);
-        printf("]\n");
-        }
-        //second matrix
-    printf("Enter second matrix elements : ");
-    for(i=0;i<3;i++)
-        for(j=0;j<3;j++)
-            scanf("%d",&b[i][j]);
-            for(i=0;i<3;i++)
-        {
-        printf("[");
-        for(j=0;j<3;j++)
-            printf("%d ",b[i][j]);
-        printf("]\n");
-        }
-        //sum of matrix
-    printf("sum of two matrix\n");
-    for(i=0;i<3;i++)
-        for(j=0;j<3;j++)
-            sum[i][j] = a[i][j] + b[i][j];
-    for(i=0;i<3;i++)
-        {
-        printf("[");
-        for(j=0;j<3;j++)
-            printf("%d ",sum[i][j]);
-        printf("]\n");
-        }
+    int m1[3][3], m2[3][3], sum[3][3];
+
+    inputmatrix(m1);
+    inputmatrix(m2);
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+            sum[i][j] = m1[i][j] + m2[i][j];
+    }
+    displaymatrix(sum);
     return 0;
 }

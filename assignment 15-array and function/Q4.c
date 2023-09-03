@@ -1,50 +1,56 @@
-#include<stdio.h>
-void rotation();     //function decleration
+#include <stdio.h>
+void rotate(int[], int);
+
 int main()
 {
-    int i,b[5]={32,29,40,12,70};
-    printf("original array : ");
-    for(i=0;i<5;i++)
-        printf("%d ",b[i]);
-    rotation(b);       //function call
+    int num[100], len;
+
+    printf("Enter how many number you want to enter: ");
+    scanf("%d", &len);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < len; i++)
+        scanf("%d", &num[i]);
+
+    rotate(num, len);
+
+    for (int i = 0; i < len; i++)
+        printf("%d ", num[i]);
+
     return 0;
 }
-//function define
-void rotation(int a[])
+
+void rotate(int num[], int l)
 {
-    int i,n,j,dir,temp;
-    printf("\nEnter postion number you want to rotate : ");
-    scanf("%d",&n);
-    printf("Enter 1 for left rotation or 0 for rigt rotation : ");
-    scanf("%d",&dir);
-    if(dir)  //left rotation
+    int n, d, temp;
+
+    printf("Enter no of position you want to rotate: ");
+    scanf("%d", &n);
+    printf("Enter 1 of right direction rotation and 0 for left :");
+    scanf("%d", &d);
+
+    if (d)
     {
-        for(j=0;j<n;j++)
+        for (int i = n; i > 0; i--)
         {
-            temp=a[0];
-            for(i=0;i<4;i++)
+            temp = num[0];
+            for (int j = 0; j < l - 1; j++)
             {
-                a[i]=a[i+1];
+                num[j] = num[j + 1];
             }
-        a[i]=temp;
+            num[l - 1] = temp;
         }
-        printf("After left rotaion :");
-        for(i=0;i<5;i++)
-            printf("%d ",a[i]);
     }
-    else  //right rotation
+    else
     {
-        for(j=0;j<n;j++)
+        for (int i = n; i > 0; i--)
         {
-            temp=a[4];
-            for(i=4;i>0;i--)
+            temp = num[l - 1];
+            for (int j = l - 1; j > 0; j--)
             {
-                a[i]=a[i-1];
+                num[j] = num[j - 1];
             }
-        a[0]=temp;
+            num[0] = temp;
         }
-        printf("After right rotaion :");
-        for(i=0;i<5;i++)
-            printf("%d ",a[i]);
     }
 }

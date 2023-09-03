@@ -1,9 +1,10 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 int main()
 {
-    int *ptr;
-    ptr=(int*)malloc(sizeof(int));
-    ptr=NULL;
+    int *ptr = NULL;
+    ptr = (int *)malloc(sizeof(int)); // memory leak
+    ptr = NULL;
     return 0;
 }

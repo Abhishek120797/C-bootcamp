@@ -1,18 +1,19 @@
-#include<stdio.h>
-void printreverse(int);
+#include <stdio.h>
+void reverse(int);
 int main()
 {
     int num;
     printf("Enter a number : ");
-    scanf("%d",&num);
-    printreverse(num);
+    scanf("%d", &num);
+    reverse(num);
     return 0;
 }
 
-//recursive function
-void printreverse(int n)
+void reverse(int n)
 {
-    if(n>0)
-    printf("%d",n%10);
-    printreverse(n/10);
+    if (n != 0)
+    {
+        printf("%d", n % 10);
+        reverse(n / 10);
+    }
 }

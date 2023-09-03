@@ -1,26 +1,36 @@
-#include<stdio.h>
-int sort();	//function decleration
+#include <stdio.h>
+void sort(int[], int);
 int main()
 {
-    int i,a[10]={3,3,6,8,9,12,7,4,5,5};
-    a[10]=sort(a,10);		//function call
-    for(i=0;i<10;i++)
-        printf("%d ",a[i]);
+    int num[100], length;
+    printf("how many number you want to enter: ");
+    scanf("%d", &length);
+
+    printf("Enter numbers: ");
+    for (int i = 0; i < length; i++)
+        scanf("%d", &num[i]);
+
+    sort(num, length);
+
+    for (int i = 0; i < length; i++)
+        printf("%d ", num[i]);
+
     return 0;
 }
-//function define
-int sort(int b[],int size)
+
+void sort(int n[], int l)
 {
-    int temp,i,j;
-        for(i=0;i<size;i++)
+    int temp;
+    for (int i = 0; i < l; i++)
     {
-        for(j=0;j<size;j++)
-            if(b[i]<b[j])
+        for (int j = i + 1; j < l; j++)
+        {
+            if (n[i] > n[j])
             {
-                temp=b[j];
-                b[j]=b[i];
-                b[i]=temp;
+                temp = n[j];
+                n[j] = n[i];
+                n[i] = temp;
             }
+        }
     }
-  return b;
 }

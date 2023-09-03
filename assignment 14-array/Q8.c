@@ -1,20 +1,36 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-    int num[10],i,j,temp;
-    printf("Enter 10 numbers : ");
-    for(i=0;i<10;i++)
-        scanf("%d",&num[i]);
-    for(i=0;i<10;i++)
+    int num[10], smallest_1, smallest_2;
+
+    printf("Enter 10 numbers: ");
+    for (int i = 0; i < 10; i++)
+        scanf("%d", &num[i]);
+
+    if (num[0] < num[1])
     {
-        for(j=0;j<10;j++)
-            if(num[i]<num[j])
-            {
-                temp=num[j];
-                num[j]=num[i];
-                num[i]=temp;
-            }
+        smallest_1 = num[0];
+        smallest_2 = num[1];
     }
-        printf("%d is second smallest number in array",num[1]);
+    else
+    {
+        smallest_1 = num[1];
+        smallest_2 = num[0];
+    }
+
+    for (int i = 2; i < 10; i++)
+    {
+        if (num[i] < smallest_1)
+        {
+            smallest_2 = smallest_1;
+            smallest_1 = num[i];
+        }
+        else
+        {
+            if (num[i] < smallest_2)
+                smallest_2 = num[i];
+        }
+    }
+    printf("%d is second smallest", smallest_2);
     return 0;
 }
