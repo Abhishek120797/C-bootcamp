@@ -1,3 +1,5 @@
+// Write a program to print the first N even natural numbers
+
 #include <stdio.h>
 int main()
 {

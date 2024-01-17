@@ -1,3 +1,5 @@
+// Write a program to print a given number without its last digit
+
 #include <stdio.h>
 int main()
 {

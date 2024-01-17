@@ -1,3 +1,5 @@
+// Write a program to print a table of N.
+
 #include <stdio.h>
 int main()
 {
