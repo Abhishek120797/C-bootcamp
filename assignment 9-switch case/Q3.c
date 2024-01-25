@@ -1,3 +1,6 @@
+// Write a program which takes the day number of a week and displays a
+// unique greeting message for the day.
+
 #include <stdio.h>
 int main()
 {

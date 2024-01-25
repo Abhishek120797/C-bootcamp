@@ -1,3 +1,5 @@
+// Write a program in C to count the digits of a given number using recursion
+
 #include <stdio.h>
 int count(int);
 int main()

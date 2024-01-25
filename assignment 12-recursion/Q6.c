@@ -1,3 +1,5 @@
+// Write a recursive function to print first N even natural numbers in reverse order
+
 #include <stdio.h>
 void print_N(int);
 int main()

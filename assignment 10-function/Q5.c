@@ -1,3 +1,5 @@
+// Write a function to print first N odd natural numbers. (TSRN)
+
 #include <stdio.h>
 void display(int);
 int main()

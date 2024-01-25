@@ -1,3 +1,5 @@
+// Write a recursive function to calculate HCF of two numbers
+
 #include <stdio.h>
 int hcf(int, int);
 int main()

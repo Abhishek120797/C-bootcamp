@@ -1,3 +1,5 @@
+// Write a function to calculate LCM of two numbers. (TSRS)
+
 #include <stdio.h>
 int lcm(int, int);
 int main()

@@ -1,3 +1,5 @@
+// Write a function to sort an array of any size. (TSRS)
+
 #include <stdio.h>
 void sort(int[], int);
 int main()

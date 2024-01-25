@@ -1,3 +1,5 @@
+// Write a recursive function to print binary of a given decimal number
+
 #include <stdio.h>
 void print_B(int);
 int main()

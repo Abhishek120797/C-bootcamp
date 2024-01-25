@@ -1,3 +1,5 @@
+// Write a recursive function to print reverse of a given number
+
 #include <stdio.h>
 void reverse(int);
 int main()

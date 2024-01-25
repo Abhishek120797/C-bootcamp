@@ -1,3 +1,5 @@
+// Write a function to print first N prime numbers (TSRN)
+
 #include <stdio.h>
 void print_prime(int);
 int main()

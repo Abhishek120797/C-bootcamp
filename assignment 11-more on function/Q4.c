@@ -1,3 +1,5 @@
+// Write a function to find the next prime number of a given number. (TSRS)
+
 #include <stdio.h>
 int next_prime(int);
 

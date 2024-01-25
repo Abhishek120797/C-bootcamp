@@ -1,3 +1,5 @@
+// Write a program to count digits in a given number
+
 #include <stdio.h>
 int main()
 {

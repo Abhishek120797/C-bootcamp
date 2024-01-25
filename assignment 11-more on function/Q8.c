@@ -1,3 +1,5 @@
+// Write a function to print PASCAL Triangle. (TSRN)
+
 #include <stdio.h>
 
 int fact(int);

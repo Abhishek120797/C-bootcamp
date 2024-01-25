@@ -1,3 +1,5 @@
+// Write a function to print all Prime numbers between two given numbers. (TSRN)
+
 #include <stdio.h>
 void print_prime(int, int);
 int main()

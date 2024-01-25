@@ -1,3 +1,5 @@
+// Write a function to calculate simple interest. (TSRS)
+
 #include <stdio.h>
 float simpleInterest(int, float, int);
 int main()

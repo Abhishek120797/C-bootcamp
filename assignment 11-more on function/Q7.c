@@ -1,3 +1,5 @@
+// Write a function to print first N terms of Fibonacci series (TSRN)
+
 #include <stdio.h>
 void print_fib(int);
 

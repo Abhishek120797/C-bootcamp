@@ -1,3 +1,5 @@
+// Write a function to calculate HCF of two numbers. (TSRS)
+
 #include <stdio.h>
 int hcf(int, int);
 int main()

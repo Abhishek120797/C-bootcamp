@@ -1,3 +1,5 @@
+// Write a function to find the greatest number from the given array of any size. (TSRS)
+
 #include <stdio.h>
 int greatest(int[], int);
 int main()

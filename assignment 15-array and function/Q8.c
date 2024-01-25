@@ -1,3 +1,5 @@
+// Write a function in C to print all unique elements in an array.
+
 #include <stdio.h>
 void uniqueElement(int[], int);
 int main()

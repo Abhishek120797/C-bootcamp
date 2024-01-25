@@ -1,3 +1,5 @@
+// Write a function in C to count the frequency of each element of an array.
+
 #include <stdio.h>
 void frequency_count(int[], int);
 int main()

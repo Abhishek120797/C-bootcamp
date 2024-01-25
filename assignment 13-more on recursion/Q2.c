@@ -1,3 +1,5 @@
+// Write a recursive function to calculate sum of first N odd natural numbers
+
 #include <stdio.h>
 int sum_odd(int);
 int main()

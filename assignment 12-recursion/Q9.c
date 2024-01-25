@@ -1,3 +1,5 @@
+// Write a recursive function to print octal of a given decimal number
+
 #include <stdio.h>
 void print_O(int);
 int main()

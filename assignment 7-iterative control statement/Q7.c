@@ -1,3 +1,5 @@
+// Write a program to print all Prime numbers between two given numbers
+
 #include <stdio.h>
 int main()
 {
