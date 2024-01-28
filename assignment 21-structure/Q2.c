@@ -1,3 +1,6 @@
+// Write a function to take input employee data from the user. [ Refer structure from
+// question 1 ]
+
 #include <stdio.h>
 #include <string.h>
 

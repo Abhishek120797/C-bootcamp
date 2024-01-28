@@ -1,3 +1,5 @@
+// Write a program to compute the sum of all elements in an array using pointers.
+
 #include <stdio.h>
 #include <string.h>
 

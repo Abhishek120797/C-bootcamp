@@ -1,3 +1,5 @@
+// Write a program to count vowels in a given string
+
 #include <stdio.h>
 
 int main()

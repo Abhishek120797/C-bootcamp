@@ -1,3 +1,6 @@
+// Write a function to sort employees according to their names [refer structure from
+// question 1]
+
 #include <stdio.h>
 #include <string.h>
 

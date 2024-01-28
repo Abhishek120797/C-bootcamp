@@ -1,3 +1,5 @@
+// Write a function to transform a string into lowercase
+
 #include <stdio.h>
 
 void strlower(char str[])

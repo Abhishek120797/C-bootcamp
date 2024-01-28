@@ -1,3 +1,5 @@
+// Write a program in C to find the sum of left diagonals of a matrix.
+
 #include <stdio.h>
 
 void inputmatrix(int arr[][3])

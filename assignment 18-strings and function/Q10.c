@@ -1,3 +1,5 @@
+// Write a function to find the repeated character in a given string
+
 #include <stdio.h>
 
 void count_char(char str[])

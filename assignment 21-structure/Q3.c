@@ -1,3 +1,5 @@
+// Write a function to display employee data. [ Refer structure from question 1 ]
+
 #include <stdio.h>
 #include <string.h>
 

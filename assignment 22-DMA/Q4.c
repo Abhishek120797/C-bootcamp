@@ -1,3 +1,5 @@
+// Write a program to input and print text using dynamic memory allocation.
+
 #include <stdio.h>
 #include <stdlib.h>
 

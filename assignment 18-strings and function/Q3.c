@@ -1,3 +1,5 @@
+// Write a function to compare two strings
+
 #include <stdio.h>
 int strcmp(char str1[], char str2[])
 {

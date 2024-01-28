@@ -1,3 +1,5 @@
+// Write a function to transform string into uppercase
+
 #include <stdio.h>
 
 void strupper(char str[])

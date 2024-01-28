@@ -1,3 +1,5 @@
+// Write a program to convert a given string into lowercase
+
 #include <stdio.h>
 
 int main()

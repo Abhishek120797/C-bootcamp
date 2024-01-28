@@ -1,3 +1,5 @@
+// Write a function to count words in a given string
+
 #include <stdio.h>
 int count_word(char str[])
 {

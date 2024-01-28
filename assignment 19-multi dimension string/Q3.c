@@ -1,3 +1,5 @@
+// Write a program to read and display a 2D array of strings in C language.
+
 #include <stdio.h>
 void display_string(char[][20], int);
 void read_string(char[][20], int);

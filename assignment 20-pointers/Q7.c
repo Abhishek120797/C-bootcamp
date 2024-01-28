@@ -1,3 +1,6 @@
+// Write a program to count the number of vowels and consonants in a string using a
+//  pointer
+
 #include <stdio.h>
 #include <string.h>
 void count_const_vowel(char *s, int *v, int *c)

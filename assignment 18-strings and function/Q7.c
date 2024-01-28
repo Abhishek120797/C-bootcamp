@@ -1,3 +1,5 @@
+// Write a function to check whether a given string is palindrome or not.
+
 #include <stdio.h>
 
 int strlen(char str[])

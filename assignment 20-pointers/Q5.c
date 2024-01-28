@@ -1,3 +1,5 @@
+// Write a program to find the maximum number between two numbers using a pointer
+
 #include <stdio.h>
 int max(int *a, int *b)
 {

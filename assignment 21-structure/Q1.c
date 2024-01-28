@@ -1,3 +1,5 @@
+// Define a structure Employee with member variables id, name, salary
+
 #include <stdio.h>
 
 int main()

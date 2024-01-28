@@ -1,3 +1,5 @@
+// Write a program to calculate the product of two matrices each of order 3x3.
+
 #include <stdio.h>
 
 void inputmatrix(int arr[][3])

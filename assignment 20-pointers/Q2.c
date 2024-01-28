@@ -1,3 +1,5 @@
+// Write a function to swap strings of two char arrays of calling functions. (TSRS)
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
